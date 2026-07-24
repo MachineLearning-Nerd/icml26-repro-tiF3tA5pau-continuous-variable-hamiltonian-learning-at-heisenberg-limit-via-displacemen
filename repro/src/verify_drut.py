@@ -203,3 +203,8 @@ from claim1 import main as verify_claim1
 
 if not verify_claim1():
     raise SystemExit(1)
+
+from claim2 import main as verify_claim2
+
+if not verify_claim2():
+    raise SystemExit(1)

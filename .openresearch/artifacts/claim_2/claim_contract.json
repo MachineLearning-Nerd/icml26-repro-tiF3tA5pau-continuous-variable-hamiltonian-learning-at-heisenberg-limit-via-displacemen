@@ -1,0 +1,16 @@
+{
+  "claim_id": 2,
+  "paper_version_tested": "arXiv:2510.08419v1",
+  "source_pdf_sha256": "88c58a90096ad67bea10336322a33d15a76367d59a7195ef30266c702652b2c7",
+  "source_anchors": ["Theorem 2", "Equations (4)-(7)", "Equations (71)-(85)"],
+  "exact_statement_tested": "The first-quantization D-RUT outer/inner protocol recovers physical coefficients with total evolution time O(log(1/epsilon_G))/epsilon_G under the stated known-zero, nonzero-response, and close-reference assumptions.",
+  "instance": "H=G20*x^2+G02*p^2 with unknown oscillator product and frequency; g20 is exactly zero in the physical basis.",
+  "targets": [0.02, 0.01, 0.005, 0.0025, 0.00125],
+  "candidate_rpe_levels": [5, 6, 7, 8, 9, 10, 11, 12],
+  "calibration_replicates": 16,
+  "validation_replicates": 32,
+  "seed": 202251008419,
+  "non_circularity": "Every candidate RPE horizon is swept on calibration seeds and the observed first successful level is frozen for disjoint validation. The resource horizon is not selected from the claimed formula.",
+  "negative_controls": ["underpowered RPE horizon", "zero-response barren signal", "rank-deficient physical transform"],
+  "verdict_rule": "VERIFIED only if all assumptions, the exact transform certificate, empirical first-hit calibration, disjoint validation, resource scaling, checker, and controls pass; otherwise BLOCKED."
+}
