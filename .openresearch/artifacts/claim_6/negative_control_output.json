@@ -1,0 +1,10 @@
+{
+  "negative_controls": {
+    "omit_displacement_coefficient_rmse": 0.21180179413782121,
+    "omit_twirl_vacuum_leakage_probability": 0.13412539447083338
+  },
+  "acceptance_checks": {
+    "omit_displacement_control_fails_recovery": true,
+    "omit_twirl_control_breaks_vacuum_eigenphase_model": true
+  }
+}

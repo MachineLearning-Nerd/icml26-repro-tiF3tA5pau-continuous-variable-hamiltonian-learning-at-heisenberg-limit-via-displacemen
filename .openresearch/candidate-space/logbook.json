@@ -15,32 +15,44 @@
     "file": "pages/index.md",
     "children": [
       {
+        "slug": "claim-6-current",
+        "title": "Claim 6: current D-RUT pipeline — VERIFIED",
+        "file": "pages/claim-6-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "visibility-matrix",
+        "title": "Evaluator-visible evidence matrix",
+        "file": "pages/visibility-matrix/page.md",
+        "children": []
+      },
+      {
         "slug": "overview",
-        "title": "Overview",
+        "title": "Historical rejected baseline — Overview",
         "file": "pages/overview/page.md",
         "children": []
       },
       {
         "slug": "claims",
-        "title": "Claims",
+        "title": "Historical rejected baseline — Claims",
         "file": "pages/claims/page.md",
         "children": []
       },
       {
         "slug": "evidence",
-        "title": "Evidence",
+        "title": "Historical rejected baseline — Evidence",
         "file": "pages/evidence/page.md",
         "children": []
       },
       {
         "slug": "verification-run",
-        "title": "Verification run",
+        "title": "Historical rejected baseline — Verification run",
         "file": "pages/verification-run/page.md",
         "children": []
       },
       {
         "slug": "conclusion",
-        "title": "Conclusion",
+        "title": "Historical rejected baseline — Conclusion",
         "file": "pages/conclusion/page.md",
         "children": []
       }

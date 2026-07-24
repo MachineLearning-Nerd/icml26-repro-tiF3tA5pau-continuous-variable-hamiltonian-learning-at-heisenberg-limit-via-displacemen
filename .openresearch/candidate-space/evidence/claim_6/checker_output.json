@@ -1,0 +1,7 @@
+{
+  "checker": "claim6_verify.py",
+  "passed": true,
+  "failures": [],
+  "source_run": "bbf94f9d-627f-4af6-9d56-88baeb6004b5",
+  "source_commit": "90cbb933ed2d4d8775b78185823412a8536bcbf0"
+}

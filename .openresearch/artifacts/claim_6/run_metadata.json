@@ -1,0 +1,18 @@
+{
+  "experiment_id": "1f3af538-e141-45ce-b0b5-bded9d78ff66",
+  "experiment_title": "Claim 6 exact finite U(1) twirl",
+  "run_id": "bbf94f9d-627f-4af6-9d56-88baeb6004b5",
+  "git_sha": "90cbb933ed2d4d8775b78185823412a8536bcbf0",
+  "fixed_command": "uv sync --frozen --no-dev && uv run --frozen python repro/src/verify_drut.py",
+  "backend": "local",
+  "selected_flavor": "local (no reservable flavor)",
+  "estimated_cpu_cores": 1,
+  "host_visible_cpu_allocation": 8,
+  "enforced_thread_cap": 1,
+  "estimated_runtime": "under 5 minutes",
+  "openresearch_wall_duration_seconds": 20,
+  "verifier_runtime_seconds": 0.011841749997984152,
+  "status": "done",
+  "exit_code": 0,
+  "verdict": "VERIFIED"
+}
