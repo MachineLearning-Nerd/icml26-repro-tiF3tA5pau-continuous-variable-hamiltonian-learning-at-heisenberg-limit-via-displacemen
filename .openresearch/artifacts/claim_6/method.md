@@ -5,9 +5,11 @@ truncation and a Hermitian normal-ordered degree-2 Hamiltonian with five nonzero
 real/complex coefficients. For each Algorithm 1 displacement:
 
 1. A matrix exponential forms the physical displacement operator.
-2. The displaced Hamiltonian is averaged over seven equally spaced number
-   rotations. Seven phases exactly remove all number changes possible at degree
-   two; the remaining finite-cutoff error is measured rather than assumed.
+2. The displaced Hamiltonian is averaged over 29 equally spaced number
+   rotations. Because the 24-state matrix has index differences only in
+   `[-23, 23]`, this finite cyclic average exactly implements the continuous
+   U(1) projection on the truncated matrix; the residual is still measured
+   rather than assumed.
 3. The vacuum eigenvalue of the twirled Hamiltonian determines the ancilla X/Y
    probabilities.
 4. Binomial samples with seed `251008419` feed an iterative power-of-two phase

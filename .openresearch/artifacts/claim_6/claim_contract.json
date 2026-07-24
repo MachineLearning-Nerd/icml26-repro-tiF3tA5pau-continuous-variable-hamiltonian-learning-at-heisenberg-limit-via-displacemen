@@ -22,7 +22,7 @@
   "required_algorithm_path": [
     "construct the finite-Fock bosonic Hamiltonian",
     "apply D(beta) = exp(beta b^dagger - beta* b)",
-    "twirl over number rotations U(theta) = exp(-i theta N)",
+    "twirl over 29 number rotations U(theta) = exp(-i theta N), exceeding every nonzero Fock-index difference in the 24-state truncation",
     "obtain X/Y ancilla probabilities at kappa in {1,2,...,4096}",
     "run sampled power-of-two robust phase estimation",
     "sample d+1 mapped Chebyshev radial nodes",
