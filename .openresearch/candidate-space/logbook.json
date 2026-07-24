@@ -15,6 +15,12 @@
     "file": "pages/index.md",
     "children": [
       {
+        "slug": "claim-4-current",
+        "title": "Claim 4: covariance domination certificate — VERIFIED",
+        "file": "pages/claim-4-current/page.md",
+        "children": []
+      },
+      {
         "slug": "claim-6-current",
         "title": "Claim 6: current D-RUT pipeline — VERIFIED",
         "file": "pages/claim-6-current/page.md",

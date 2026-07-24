@@ -1,0 +1,21 @@
+{
+  "backend": "local",
+  "selected_flavor": "local (no reservable flavor)",
+  "estimated_cpu_cores": 1,
+  "thread_cap": 1,
+  "host_visible_cpu_allocation": 8,
+  "estimated_runtime": "under five minutes",
+  "openresearch_wall_seconds": 20,
+  "verifier_inner_seconds": 0.1032721669980674,
+  "run_id": "99068394-4336-4f8a-aa33-c20453a79c86",
+  "experiment_id": "cae46580-85bd-411f-82f9-b61a9b1396df",
+  "git_sha": "a4ee0f57a08560f2ca47f2a804c1f48f90aa96c5",
+  "seed": 404251008419,
+  "exit_code": 0,
+  "fixed_command": "uv sync --frozen --no-dev && uv run --frozen python repro/src/verify_drut.py",
+  "software": {
+    "python": "3.12.11",
+    "numpy": "2.2.6",
+    "sympy": "1.14.0"
+  }
+}
