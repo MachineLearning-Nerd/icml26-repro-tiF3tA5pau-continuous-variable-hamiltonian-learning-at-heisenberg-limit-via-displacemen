@@ -178,3 +178,8 @@ print("  Scientific status: 5 TOY, 1 INCONCLUSIVE (live judge).")
 with (OUT / "verdict.json").open("w", encoding="utf-8") as handle:
     json.dump(results, handle, indent=2)
 print("  wrote outputs/verdict.json")
+
+from claim6 import main as verify_claim6
+
+if not verify_claim6():
+    raise SystemExit(1)

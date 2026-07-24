@@ -1,0 +1,45 @@
+{
+  "claim_id": 6,
+  "judge_claim": "The algorithm uses Chebyshev-node sampling of the displacement parameter combined with robust phase estimation and inverse discrete Fourier transform to reconstruct coefficients, as detailed in Algorithm 1 and illustrated for the single-mode case in Figure 1 (Section 2).",
+  "paper_version_tested": "arXiv:2510.08419v1",
+  "source_pdf_sha256": "88c58a90096ad67bea10336322a33d15a76367d59a7195ef30266c702652b2c7",
+  "source_anchors": [
+    "Algorithm 1",
+    "Figure 1",
+    "Equation (2)",
+    "Equations (24)-(30)"
+  ],
+  "domain": {
+    "system": "single bosonic mode",
+    "hamiltonian": "Hermitian normal-ordered polynomial with no constant term",
+    "maximum_order": 2,
+    "fock_cutoff": 24,
+    "displacement_radius_interval": [
+      0.15,
+      0.65
+    ]
+  },
+  "required_algorithm_path": [
+    "construct the finite-Fock bosonic Hamiltonian",
+    "apply D(beta) = exp(beta b^dagger - beta* b)",
+    "twirl over number rotations U(theta) = exp(-i theta N)",
+    "obtain X/Y ancilla probabilities at kappa in {1,2,...,4096}",
+    "run sampled power-of-two robust phase estimation",
+    "sample d+1 mapped Chebyshev radial nodes",
+    "recover radial polynomial coefficients by least squares",
+    "apply Equation (30) inverse DFT at theta_u,l = pi*u/(l+1)"
+  ],
+  "predeclared_acceptance": {
+    "hamiltonian_hermiticity_frobenius_max": 1e-12,
+    "fock_vs_analytic_constant_absolute_max": 2e-6,
+    "twirl_off_diagonal_frobenius_max": 2e-10,
+    "algorithm1_coefficient_rmse_max": 0.0025,
+    "independent_full_design_coefficient_rmse_max": 0.0025,
+    "production_checker_rmse_max": 0.0025,
+    "omit_displacement_rmse_min": 0.1,
+    "omit_twirl_vacuum_leakage_probability_min": 0.0001
+  },
+  "seed": 251008419,
+  "verdict_rule": "VERIFIED only if every predeclared acceptance check passes and the independent checker exits zero; otherwise BLOCKED. A valid assumption-satisfying counterexample would be FALSIFIED.",
+  "scope_limit": "This contract verifies the exact named Algorithm 1 data path on a deterministic finite-Fock instance. It does not by itself verify the universal Heisenberg-scaling theorem, first-quantization theorem, or hardware feasibility."
+}
