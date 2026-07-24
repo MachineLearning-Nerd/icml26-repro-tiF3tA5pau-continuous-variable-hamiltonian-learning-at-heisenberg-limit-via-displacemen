@@ -355,6 +355,14 @@ def main() -> bool:
             "scipy": scipy.__version__,
         },
     }
+    payload = json.loads(
+        json.dumps(
+            payload,
+            default=lambda value: value.item()
+            if isinstance(value, np.generic)
+            else value,
+        )
+    )
     OUT.mkdir(exist_ok=True)
     with (OUT / "claim1_current.json").open("w", encoding="utf-8") as handle:
         json.dump(payload, handle, indent=2, sort_keys=True)
