@@ -1,0 +1,38 @@
+{
+  "claim_id": 1,
+  "judge_claim": "The D-RUT protocol learns all coefficients of a generic multi-mode finite-order bosonic Hamiltonian with total evolution time O(1/epsilon).",
+  "paper_version_tested": "arXiv:2510.08419v1",
+  "source_pdf_sha256": "88c58a90096ad67bea10336322a33d15a76367d59a7195ef30266c702652b2c7",
+  "source_anchors": [
+    "Theorem 1",
+    "Equation (1)",
+    "Equations (9)-(30)",
+    "Section 4"
+  ],
+  "domain": {
+    "modes": 2,
+    "maximum_total_degree": 2,
+    "real_independent_coefficients": 14,
+    "hamiltonian_terms": "all Hermitian single-mode monomials through degree 2 plus both independent quadratic two-mode couplings",
+    "estimator": "physical displacement, independent local number twirl, sampled X/Y robust phase estimation, Chebyshev/IDFT single-mode recovery, hierarchical coupling residual recovery"
+  },
+  "exact_statement_tested": "For a fixed finite number of modes and maximum degree, D-RUT recovers every independent coefficient and its fixed design preserves the RPE O(1/epsilon) total-evolution scaling.",
+  "predeclared_acceptance": {
+    "rpe_levels": [6, 7, 8, 9, 10, 11, 12],
+    "replicates_per_level": 24,
+    "rpe_error_time_slope_interval": [-1.2, -0.8],
+    "ramsey_sql_error_time_slope_interval": [-0.7, -0.3],
+    "minimum_slope_separation": 0.25,
+    "finest_median_coefficient_rmse_max": 0.0001,
+    "finite_fock_constant_error_max": 2e-9,
+    "twirl_off_diagonal_frobenius_max": 2e-10
+  },
+  "seed": 101251008419,
+  "non_circularity": "All seven RPE horizons are run and their first-hit behavior is observed. No error values or slopes are injected. The SQL comparison samples the same physical ancilla X/Y probabilities at kappa=1 under exactly the same evolution-time budget.",
+  "negative_controls": [
+    "same-budget conventional kappa=1 Ramsey sampling should scale as T^-1/2",
+    "omitting displacement must leave non-number-conserving coefficients unrecovered",
+    "omitting the local number twirl must leave the vacuum coupled off diagonal"
+  ],
+  "verdict_rule": "VERIFIED only if the exact fixed-design resource certificate, all physical checks, coefficient recovery, slopes, independent checker, and all controls pass; otherwise BLOCKED."
+}

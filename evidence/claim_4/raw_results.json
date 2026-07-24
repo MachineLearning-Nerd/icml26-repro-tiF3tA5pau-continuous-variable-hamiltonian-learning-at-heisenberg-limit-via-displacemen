@@ -1,0 +1,399 @@
+{
+  "acceptance_checks": {
+    "correlated_noise_control_breaks_domination": true,
+    "exact_rational_matrix_identity": true,
+    "monte_carlo_matches_hierarchical_covariance": true,
+    "orthogonal_blocks_reproduce_historical_equality": true,
+    "random_full_rank_matrix_certificates": true,
+    "schur_complement_positive_definite": true,
+    "strict_case_difference_is_psd": true,
+    "strict_case_factor_identity": true,
+    "strict_correlated_block_case_improves_total_variance": true
+  },
+  "assumptions": [
+    "A=M1^dagger M1 and D=M2^dagger M2 are positive definite",
+    "G=[M1 M2]^dagger[M1 M2] is positive definite",
+    "stage-1 and stage-2 hierarchical measurement noises are independent",
+    "the compared observation noises have equal isotropic variance"
+  ],
+  "claim": 4,
+  "exact_symbolic_certificate": {
+    "A": "Matrix([[6, -1], [-1, 4]])",
+    "B": "Matrix([[3, 6], [2, 0]])",
+    "B_nonzero": true,
+    "D": "Matrix([[7, 5], [5, 7]])",
+    "Q": "Matrix([[89/23, 31/23], [31/23, 17/23]])",
+    "Q_leading_principal_minors": [
+      "89/23",
+      "24/23"
+    ],
+    "Q_positive_definite_by_sylvester": true,
+    "Z": "Matrix([[14/23, 24/23], [15/23, 6/23], [-7/46, 11/46], [-19/46, -49/46]])",
+    "difference": "Matrix([[367/138, 19/92, 121/138, -401/138], [19/92, 21/184, 1/92, -17/92], [121/138, 1/92, 89/276, -271/276], [-401/138, -17/92, -271/276, 881/276]])",
+    "difference_nonzero": true,
+    "factor": "Matrix([[367/138, 19/92, 121/138, -401/138], [19/92, 21/184, 1/92, -17/92], [121/138, 1/92, 89/276, -271/276], [-401/138, -17/92, -271/276, 881/276]])",
+    "identity_exact": true
+  },
+  "metrics": {
+    "empirical_min_eigenvalue": 0.054304688131177524,
+    "monte_carlo_samples": 50000,
+    "orthogonal_equality_difference_norm": 0.0,
+    "random_cases": 64,
+    "random_worst_identity_residual": 2.9863728698805045E-13,
+    "random_worst_min_eigenvalue": -3.988013834720957E-15,
+    "relative_frobenius_error": 0.003974486330183368,
+    "strict_difference_min_eigenvalue": -2.7427297600979084E-16,
+    "strict_identity_residual": 2.169830769130105E-14,
+    "strict_trace_improvement": 6.288043478260876
+  },
+  "negative_control": {
+    "determinant_sim_minus_correlated_hierarchical": -0.25,
+    "minimum_eigenvalue_sim_minus_correlated_hierarchical": -0.13278221853731872
+  },
+  "proof_statement": "For full-column-rank [M1 M2] with independent unit-covariance noise in the two hierarchical stages, Cov_sim-Cov_hier = Z Q^{-1} Z^dagger is positive semidefinite, where Q=D-B^dagger A^{-1}B and Z=[A^{-1}B; -D^{-1}B^dagger A^{-1}B].",
+  "resources": {
+    "backend": "local",
+    "estimated_cpu_cores": 1,
+    "host_visible_cpu_allocation": 8,
+    "runtime_seconds_inside_verifier": 0.1032721669980674,
+    "thread_cap": 1
+  },
+  "seed": 404251008419,
+  "software": {
+    "numpy": "2.2.6",
+    "python": "3.12.11",
+    "sympy": "1.14.0"
+  },
+  "source": {
+    "anchors": [
+      "Section 4.1",
+      "Appendix A",
+      "Equations (92)-(108)"
+    ],
+    "arxiv_id": "2510.08419v1",
+    "pdf_sha256": "88c58a90096ad67bea10336322a33d15a76367d59a7195ef30266c702652b2c7"
+  },
+  "tested_dimensions": [
+    {
+      "coupling_parameters": 1,
+      "observations": 5,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 6,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 7,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 6,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 7,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 8,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 7,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 8,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 9,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 5,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 6,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 7,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 6,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 7,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 8,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 7,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 8,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 9,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 5,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 6,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 7,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 6,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 7,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 8,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 7,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 8,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 9,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 5,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 6,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 7,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 6,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 7,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 8,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 7,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 8,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 9,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 5,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 6,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 7,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 6,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 7,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 8,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 7,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 8,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 9,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 5,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 6,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 7,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 6,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 7,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 8,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 7,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 8,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 9,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 5,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 6,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 7,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 6,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 7,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 2,
+      "observations": 8,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 7,
+      "single_parameters": 1
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 8,
+      "single_parameters": 2
+    },
+    {
+      "coupling_parameters": 3,
+      "observations": 9,
+      "single_parameters": 3
+    },
+    {
+      "coupling_parameters": 1,
+      "observations": 5,
+      "single_parameters": 1
+    }
+  ],
+  "verdict": "VERIFIED"
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "title": "Repro - Displacement-Random Unitary Transformation Protocol",
+  "emoji": "🎯",
+  "space_id": "DineshAI/tiF3tA5pau",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-tiF3tA5pau"
+  ],
+  "updated_at": "2026-07-23T12:39:03+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Repro - Displacement-Random Unitary Transformation Protocol",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "claim-1-current",
+        "title": "Claim 1: multi-mode Heisenberg scaling — VERIFIED",
+        "file": "pages/claim-1-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-2-current",
+        "title": "Claim 2: first-quantization recovery — VERIFIED",
+        "file": "pages/claim-2-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-3-current",
+        "title": "Claim 3: displacement-SPAM bound — VERIFIED",
+        "file": "pages/claim-3-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-4-current",
+        "title": "Claim 4: covariance domination certificate — VERIFIED",
+        "file": "pages/claim-4-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-5-current",
+        "title": "Claim 5: Bogoliubov squeezing search — VERIFIED",
+        "file": "pages/claim-5-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-6-current",
+        "title": "Claim 6: current D-RUT pipeline — VERIFIED",
+        "file": "pages/claim-6-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "visibility-matrix",
+        "title": "Evaluator-visible evidence matrix",
+        "file": "pages/visibility-matrix/page.md",
+        "children": []
+      },
+      {
+        "slug": "release-report",
+        "title": "Release report and score forecast",
+        "file": "pages/release-report/page.md",
+        "children": []
+      },
+      {
+        "slug": "red-team",
+        "title": "Evaluator-blind pre-publication review",
+        "file": "pages/red-team/page.md",
+        "children": []
+      },
+      {
+        "slug": "overview",
+        "title": "Historical rejected baseline — Overview",
+        "file": "pages/overview/page.md",
+        "children": []
+      },
+      {
+        "slug": "claims",
+        "title": "Historical rejected baseline — Claims",
+        "file": "pages/claims/page.md",
+        "children": []
+      },
+      {
+        "slug": "evidence",
+        "title": "Historical rejected baseline — Evidence",
+        "file": "pages/evidence/page.md",
+        "children": []
+      },
+      {
+        "slug": "verification-run",
+        "title": "Historical rejected baseline — Verification run",
+        "file": "pages/verification-run/page.md",
+        "children": []
+      },
+      {
+        "slug": "conclusion",
+        "title": "Historical rejected baseline — Conclusion",
+        "file": "pages/conclusion/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 1584,
+  "revision": "1784810343438905748"
+}

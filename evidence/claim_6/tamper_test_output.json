@@ -1,0 +1,1 @@
+{"checker": "claim6_verify.py", "failures": ["algorithm1_coefficient_rmse_below_threshold"], "passed": false}

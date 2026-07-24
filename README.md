@@ -17,6 +17,11 @@ than finite-Trotter hardware circuits.
 [Open the tutorial notebook](notebooks/drut_tutorial.py) ·
 [![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/MachineLearning-Nerd/icml26-repro-tiF3tA5pau-continuous-variable-hamiltonian-learning-at-heisenberg-limit-via-displacemen/blob/main/notebooks/drut_tutorial.py)
 
+The published evaluator artifact is mirrored at the same root-relative
+`pages/`, `evidence/`, and `release/` paths. The Space metadata README is
+preserved verbatim as [`hf-space-README.md`](hf-space-README.md); this GitHub
+README intentionally remains the project landing page.
+
 ## Experiment log
 
 Every row inherited the exact same command.

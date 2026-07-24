@@ -1,0 +1,63 @@
+{
+  "claim_id": 5,
+  "judge_claim": "An iterative bisection search over the squeezing parameter R (relating the physical and reference bases via a Bogoliubov transformation) converges in O(log(1/epsilon_R)) iterations for first-quantization Hamiltonian learning (Section 5.3, Eq. 77-78).",
+  "paper_version_tested": "arXiv:2510.08419v1",
+  "source_pdf_sha256": "88c58a90096ad67bea10336322a33d15a76367d59a7195ef30266c702652b2c7",
+  "source_anchors": [
+    "Section 5.3",
+    "Equations (71)-(78)",
+    "Section 6.1 outer and inner loops"
+  ],
+  "domain": {
+    "physical_hamiltonian": "H=omega B^dagger B",
+    "basis_relation": "B=B' cosh(Delta R)+B'^dagger sinh(Delta R)",
+    "known_zero_signal": "g'20(Delta R)=(omega/2)sinh(2 Delta R)",
+    "search_interval": [
+      0.0,
+      0.4
+    ],
+    "true_squeezing_parameter": "sqrt(3)/10",
+    "inner_oracle": "finite-Fock displacement and number twirl, sampled X/Y robust phase estimation, angular contrast recovery"
+  },
+  "assumptions": [
+    "the initial interval brackets the physical squeezing parameter",
+    "g'20 is known to vanish in the physical basis",
+    "the signal is continuous and has nonzero derivative at Delta R=0",
+    "the reference basis satisfies the paper's RPE overlap condition",
+    "the calibrated inner D-RUT/RPE oracle resolves the signal sign"
+  ],
+  "exact_statement_tested": "With the stated assumptions, after n bisections the bracket width is W/2^n and midpoint error is at most W/2^(n+1), so n=ceil(log2(W/(2 epsilon_R))) is O(log(1/epsilon_R)).",
+  "predeclared_acceptance": {
+    "target_precisions": [
+      0.05,
+      0.025,
+      0.0125,
+      0.00625,
+      0.003125
+    ],
+    "rpe_level_candidates": [
+      8,
+      10,
+      12,
+      14,
+      16
+    ],
+    "shots_per_basis": 256,
+    "calibration_delta": 0.0002,
+    "calibration_repetitions_per_sign": 32,
+    "calibration_wilson_95_lower_min": 0.9,
+    "validation_repetitions_per_precision": 32,
+    "validation_wilson_95_lower_min": 0.85,
+    "iteration_slope_absolute_tolerance": 1e-12,
+    "finite_fock_response_absolute_max": 2e-12,
+    "twirl_off_diagonal_frobenius_max": 2e-10
+  },
+  "seed": 505251008419,
+  "non_circularity": "The RPE level is the first empirical success in a predeclared horizon sweep on a disjoint sign-calibration task. Formula-derived inner resources are not the main evidence.",
+  "negative_controls": [
+    "the lowest underpowered RPE level must fail calibration",
+    "K=0 gives an identically zero barren-plateau signal with no sign bracket",
+    "the historical x^2 proxy has no sign-changing bracket on the tested interval"
+  ],
+  "verdict_rule": "VERIFIED only if the exact Bogoliubov identity, interval-contraction certificate, overlap/rank assumptions, independent RPE calibration, disjoint validations, independent checker, and controls all pass; otherwise BLOCKED."
+}

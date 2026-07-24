@@ -1,0 +1,5 @@
+{
+  "conventional_kappa_one_ramsey": "Same evolution-time budget, physical X/Y ancilla sampling at kappa=1.",
+  "omit_displacement_rmse": 0.10173986436004326,
+  "omit_twirl_off_diagonal_frobenius": 12.61775578059671
+}
