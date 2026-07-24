@@ -1,0 +1,14 @@
+[project]
+name = "drut-reproduction"
+version = "0.1.0"
+description = "Claim-by-claim reproduction of arXiv:2510.08419"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "matplotlib==3.10.3",
+  "numpy==2.2.6",
+  "scipy==1.15.3",
+  "sympy==1.14.0",
+]
+
+[tool.uv]
+package = false

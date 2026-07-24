@@ -21,6 +21,12 @@
         "children": []
       },
       {
+        "slug": "claim-2-current",
+        "title": "Claim 2: first-quantization recovery — VERIFIED",
+        "file": "pages/claim-2-current/page.md",
+        "children": []
+      },
+      {
         "slug": "claim-3-current",
         "title": "Claim 3: displacement-SPAM bound — VERIFIED",
         "file": "pages/claim-3-current/page.md",

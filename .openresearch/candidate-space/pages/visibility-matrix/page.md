@@ -7,7 +7,7 @@ the item directly; it does not forecast judge points.
 | Claim | Canonical page | Code visible | Data inline | Raw link | Checker | Control | Exact claim tested | Reviewer verdict |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [Current multi-mode Heisenberg scaling](#/claim-1-current) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Scientific review complete; evaluator-blind red team pending |
-| 2 | Missing | Missing | Missing | Missing | Missing | Missing | Missing | BLOCKED |
+| 2 | [Current first-quantization recovery](#/claim-2-current) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Scientific review complete; evaluator-blind red team pending |
 | 3 | [Current displacement-SPAM bound](#/claim-3-current) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Scientific review complete; evaluator-blind red team pending |
 | 4 | [Current covariance certificate](#/claim-4-current) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Scientific review complete; evaluator-blind red team pending |
 | 5 | [Current Bogoliubov squeezing search](#/claim-5-current) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Scientific review complete; evaluator-blind red team pending |

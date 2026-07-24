@@ -1,0 +1,13 @@
+{
+  "backend": "local",
+  "estimated_cpu_cores": 1,
+  "actual_visible_cpu_allocation": 8,
+  "thread_cap": 1,
+  "openresearch_wall_runtime_seconds": 35,
+  "claim_runtime_seconds": 2.8845219170034397,
+  "experiment_id": "e0785506-09a6-465d-ba13-a2e5aa6e5bfc",
+  "run_id": "826fd8e2-da51-4bcc-8f0d-a2fe1650d046",
+  "git_sha": "337c9b256ef4049ad295582d7818f00fa4d7050e",
+  "command": "uv sync --frozen --no-dev && uv run --frozen python repro/src/verify_drut.py",
+  "seed": 202251008419
+}

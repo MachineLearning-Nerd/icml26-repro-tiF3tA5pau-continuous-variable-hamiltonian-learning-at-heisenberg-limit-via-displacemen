@@ -1,0 +1,12 @@
+{
+  "barren_signal": "If omega=0, g20(DeltaR)=0 and no sign query is possible.",
+  "finest_target_lowest_level": {
+    "level": 5,
+    "median_rmse": 0.0021604166363137665,
+    "success_rate": 0.0,
+    "successes": 0,
+    "trials": 16,
+    "wilson_95_lower": 0.0
+  },
+  "singular_fake_transform_determinant": "Deleting the p^2 row makes the physical coefficient map rank deficient."
+}
