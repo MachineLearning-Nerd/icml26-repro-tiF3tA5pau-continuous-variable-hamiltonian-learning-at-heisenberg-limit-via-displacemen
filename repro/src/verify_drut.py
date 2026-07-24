@@ -193,3 +193,8 @@ from claim3 import main as verify_claim3
 
 if not verify_claim3():
     raise SystemExit(1)
+
+from claim5 import main as verify_claim5
+
+if not verify_claim5():
+    raise SystemExit(1)
