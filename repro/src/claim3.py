@@ -169,11 +169,13 @@ def main() -> bool:
     maximum_bound_ratio = 0.0
     maximum_perturbed_fock_error = maximum_fock_response_error
     all_points_within_domain = True
+    paired_directions: list[np.ndarray] = []
+    for _ in range(DIRECTIONS_PER_MAGNITUDE):
+        direction = rng.normal(size=2 * len(betas))
+        paired_directions.append(direction / np.linalg.norm(direction))
     for magnitude in PERTURBATION_MAGNITUDES:
         errors_for_magnitude: list[float] = []
-        for direction_index in range(DIRECTIONS_PER_MAGNITUDE):
-            direction = rng.normal(size=2 * len(betas))
-            direction /= np.linalg.norm(direction)
+        for direction_index, direction in enumerate(paired_directions):
             perturbation = magnitude * direction
             actual_betas = perturbed_betas(betas, perturbation)
             maximum_radius = max(abs(beta) for beta in actual_betas)

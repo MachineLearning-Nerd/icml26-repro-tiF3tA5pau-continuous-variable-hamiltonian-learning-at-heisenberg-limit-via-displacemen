@@ -32,6 +32,7 @@
       0.01
     ],
     "directions_per_magnitude": 12,
+    "direction_pairing": "the same 12 seeded directions are evaluated at every magnitude",
     "equation_43_bound_ratio_max": 1.0000000001,
     "median_error_log_log_slope_interval": [
       0.94,

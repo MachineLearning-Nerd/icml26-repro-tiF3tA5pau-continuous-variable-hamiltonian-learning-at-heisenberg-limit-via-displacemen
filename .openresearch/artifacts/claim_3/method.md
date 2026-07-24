@@ -20,8 +20,10 @@ The universal certificate is the composition
 3. `||K^+||_2=1/sigma_min(K)`.
 
 Finite-Fock evidence checks that the response used in this derivation is the
-one produced by physical displacement plus number twirling. Sixty seeded
-perturbations span five independently selected magnitudes. A log-log slope is
+one produced by physical displacement plus number twirling. Twelve seeded
+directions are generated once, and each is evaluated at the same five
+predeclared magnitudes, giving sixty paired perturbations. This pairing avoids
+confounding scale with direction-dependent amplification. A log-log slope is
 measured only as corroboration of the small-error behavior; the universal
 upper bound is established algebraically rather than inferred from this
 sweep.
