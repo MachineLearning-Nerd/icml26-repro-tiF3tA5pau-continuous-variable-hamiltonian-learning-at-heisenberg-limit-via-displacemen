@@ -11,6 +11,8 @@
 | [Claim 5: Bogoliubov squeezing search — VERIFIED](#/claim-5-current) |
 | [Claim 6: current D-RUT pipeline — VERIFIED](#/claim-6-current) |
 | [Evaluator-visible evidence matrix](#/visibility-matrix) |
+| [Release report and score forecast](#/release-report) |
+| [Evaluator-blind pre-publication review](#/red-team) |
 
 ## Historical rejected baseline
 

@@ -43,6 +43,8 @@ Pinned environment:
 [pyproject.toml](https://huggingface.co/spaces/DineshAI/tiF3tA5pau/blob/main/evidence/claim_2/pyproject.toml),
 [uv.lock](https://huggingface.co/spaces/DineshAI/tiF3tA5pau/blob/main/evidence/claim_2/uv.lock).
 
+Exact cumulative command:
+
 ```bash
 uv sync --frozen --no-dev && uv run --frozen python repro/src/verify_drut.py
 ```
