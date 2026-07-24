@@ -4,6 +4,7 @@
 
 | Page |
 | --- |
+| [Claim 3: displacement-SPAM bound — VERIFIED](#/claim-3-current) |
 | [Claim 4: covariance domination certificate — VERIFIED](#/claim-4-current) |
 | [Claim 6: current D-RUT pipeline — VERIFIED](#/claim-6-current) |
 | [Evaluator-visible evidence matrix](#/visibility-matrix) |

@@ -8,7 +8,7 @@ the item directly; it does not forecast judge points.
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Missing | Missing | Missing | Missing | Missing | Missing | Missing | BLOCKED |
 | 2 | Missing | Missing | Missing | Missing | Missing | Missing | Missing | BLOCKED |
-| 3 | Missing | Missing | Missing | Missing | Missing | Missing | Missing | BLOCKED |
+| 3 | [Current displacement-SPAM bound](#/claim-3-current) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Scientific review complete; evaluator-blind red team pending |
 | 4 | [Current covariance certificate](#/claim-4-current) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Scientific review complete; evaluator-blind red team pending |
 | 5 | Missing | Missing | Missing | Missing | Missing | Missing | Missing | BLOCKED |
 | 6 | [Current D-RUT pipeline](#/claim-6-current) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Scientific review complete; evaluator-blind red team pending |

@@ -1,0 +1,8 @@
+{
+  "adversarial_perturbation_norm": 0.000010000000000000004,
+  "bound_ratio": 572.0876676876395,
+  "coefficient_spam_error_norm": 0.000033160777142887675,
+  "description": "replace the derived L_C by L_C/1000",
+  "underestimated_L_C": 0.0011086428946807426,
+  "underestimated_equation_43_bound": 5.7964502673029996E-8
+}

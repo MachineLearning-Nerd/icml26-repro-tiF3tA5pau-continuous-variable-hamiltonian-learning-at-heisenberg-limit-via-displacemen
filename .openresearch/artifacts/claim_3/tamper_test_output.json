@@ -1,0 +1,1 @@
+{"checker": "claim3_verify.py", "failures": ["symbolic_d_rut_response_gradient_is_exact"], "passed": false}

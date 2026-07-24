@@ -15,6 +15,12 @@
     "file": "pages/index.md",
     "children": [
       {
+        "slug": "claim-3-current",
+        "title": "Claim 3: displacement-SPAM bound — VERIFIED",
+        "file": "pages/claim-3-current/page.md",
+        "children": []
+      },
+      {
         "slug": "claim-4-current",
         "title": "Claim 4: covariance domination certificate — VERIFIED",
         "file": "pages/claim-4-current/page.md",

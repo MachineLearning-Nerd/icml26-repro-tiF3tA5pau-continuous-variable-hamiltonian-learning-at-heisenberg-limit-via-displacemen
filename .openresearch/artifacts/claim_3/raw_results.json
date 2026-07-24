@@ -1,0 +1,692 @@
+{
+  "acceptance_checks": {
+    "algorithm1_combined_design_is_full_rank": true,
+    "design_maps_physical_coefficients_to_d_rut_response": true,
+    "discrete_twirl_is_number_diagonal": true,
+    "every_spam_trial_satisfies_equation_43": true,
+    "every_spam_trial_stays_in_certified_domain": true,
+    "finite_fock_d_rut_matches_analytic_response": true,
+    "pseudoinverse_norm_equals_inverse_sigma_min": true,
+    "small_spam_error_is_linear_in_perturbation_norm": true,
+    "symbolic_d_rut_response_gradient_is_exact": true,
+    "underestimated_lipschitz_control_breaks_bound": true
+  },
+  "assumptions": [
+    "single-mode Hermitian normal-ordered Hamiltonian of degree 2",
+    "the combined Chebyshev/angle design K has full column rank",
+    "nominal and perturbed displacements lie in |beta|<=0.70",
+    "SPAM error is displacement miscalibration; RPE noise is excluded from delta_g_SPAM"
+  ],
+  "claim": 3,
+  "configuration": {
+    "angles": [
+      0.0,
+      1.0471975511965976,
+      1.5707963267948966,
+      2.0943951023931953
+    ],
+    "certified_domain_radius": 0.7,
+    "directions_per_magnitude": 12,
+    "fock_cutoff": 24,
+    "maximum_order": 2,
+    "measurement_points": 12,
+    "perturbation_magnitudes": [
+      0.0001,
+      0.0003,
+      0.001,
+      0.003,
+      0.01
+    ],
+    "phase_count": 29,
+    "radial_interval": [
+      0.15,
+      0.65
+    ],
+    "radii": [
+      0.6165063509461097,
+      0.4,
+      0.18349364905389035
+    ]
+  },
+  "design_certificate": {
+    "pseudoinverse_spectral_norm": 5.228419624672928,
+    "rank": 5,
+    "shape": [
+      12,
+      5
+    ],
+    "sigma_min": 0.19126238362372386,
+    "singular_values": [
+      2.6861237597209717,
+      2.0663672617526325,
+      0.9890930428023792,
+      0.32228832636305793,
+      0.19126238362372386
+    ]
+  },
+  "lipschitz_certificate": {
+    "certified_L_C": 1.1086428946807427,
+    "derivation": "sup ||h+Hz|| <= ||h|| + ||H|| sup||z||",
+    "domain_radius": 0.7,
+    "gradient_linear_matrix": [
+      [
+        0.94,
+        -0.12
+      ],
+      [
+        -0.12,
+        0.45999999999999996
+      ]
+    ],
+    "gradient_linear_spectral_norm": 0.9683281572999747,
+    "gradient_offset": [
+      0.4,
+      0.16
+    ],
+    "gradient_offset_norm": 0.4308131845707604
+  },
+  "metrics": {
+    "design_response_residual": 0.0,
+    "maximum_equation_43_bound_ratio": 0.17594358193052514,
+    "maximum_nominal_fock_response_error": 1.1102230246251565E-16,
+    "maximum_perturbed_fock_response_error": 5.551115123125783E-16,
+    "maximum_twirl_off_diagonal_frobenius": 5.5923052722692984E-15,
+    "median_error_log_log_slope": 1.0004893388177962,
+    "median_spam_errors": [
+      0.00006753459148568798,
+      0.00020261388042892826,
+      0.0006754975084868999,
+      0.002027503261130575,
+      0.006770140151601705
+    ],
+    "spam_trials": 60
+  },
+  "negative_control": {
+    "adversarial_perturbation_norm": 0.000010000000000000004,
+    "bound_ratio": 572.0876676876395,
+    "coefficient_spam_error_norm": 0.000033160777142887675,
+    "description": "replace the derived L_C by L_C/1000",
+    "underestimated_L_C": 0.0011086428946807426,
+    "underestimated_equation_43_bound": 5.7964502673029996E-8
+  },
+  "parameters": [
+    0.2,
+    0.08,
+    0.06,
+    -0.03,
+    0.35
+  ],
+  "proof_statement": "For the Algorithm 1 combined design K and every collection of displacement perturbations that remains in |beta|<=0.70, ||K^+[C(beta+delta)-C(beta)]||_2 <= (L_C/sigma_min(K))||delta||_2, with the certified L_C=||h||_2+||H||_2*0.70 for grad C=h+H[x,y].",
+  "resources": {
+    "backend": "local",
+    "estimated_cpu_cores": 1,
+    "host_visible_cpu_allocation": 8,
+    "runtime_seconds_inside_verifier": 1.028776375002053,
+    "thread_cap": 1
+  },
+  "seed": 303251008419,
+  "software": {
+    "numpy": "2.2.6",
+    "python": "3.12.11",
+    "scipy": "1.15.3",
+    "sympy": "1.14.0"
+  },
+  "source": {
+    "anchors": [
+      "Section 3.6",
+      "Equations (36)-(46)"
+    ],
+    "arxiv_id": "2510.08419v1",
+    "pdf_sha256": "88c58a90096ad67bea10336322a33d15a76367d59a7195ef30266c702652b2c7"
+  },
+  "symbolic_certificate": {
+    "gradient_x": "47*x/50 - 3*y/25 + 2/5",
+    "gradient_x_exact": true,
+    "gradient_y": "-3*x/25 + 23*y/50 + 4/25",
+    "gradient_y_exact": true,
+    "polynomial": "47*x**2/100 - 3*x*y/25 + 2*x/5 + 23*y**2/100 + 4*y/25"
+  },
+  "trials": [
+    {
+      "bound_ratio": 0.11962165031630041,
+      "coefficient_spam_error_norm": 0.00006933809469511455,
+      "direction_index": 0,
+      "equation_43_bound": 0.0005796450267303,
+      "magnitude": 0.0001,
+      "maximum_perturbed_radius": 0.616518152105117,
+      "response_delta_norm": 0.00003240740085155995
+    },
+    {
+      "bound_ratio": 0.16887760513176603,
+      "coefficient_spam_error_norm": 0.00009788906394075155,
+      "direction_index": 1,
+      "equation_43_bound": 0.0005796450267302999,
+      "magnitude": 0.0001,
+      "maximum_perturbed_radius": 0.6165433390396747,
+      "response_delta_norm": 0.00004736742716435561
+    },
+    {
+      "bound_ratio": 0.034938108394266275,
+      "coefficient_spam_error_norm": 0.00002025170077410059,
+      "direction_index": 2,
+      "equation_43_bound": 0.0005796450267302999,
+      "magnitude": 0.0001,
+      "maximum_perturbed_radius": 0.6165270593119915,
+      "response_delta_norm": 0.00004161178947695496
+    },
+    {
+      "bound_ratio": 0.11339886524523757,
+      "coefficient_spam_error_norm": 0.00006573108827626141,
+      "direction_index": 3,
+      "equation_43_bound": 0.0005796450267302999,
+      "magnitude": 0.0001,
+      "maximum_perturbed_radius": 0.6165170684646432,
+      "response_delta_norm": 0.000042508282528523065
+    },
+    {
+      "bound_ratio": 0.02611932585863369,
+      "coefficient_spam_error_norm": 0.000015139937335505136,
+      "direction_index": 4,
+      "equation_43_bound": 0.0005796450267302998,
+      "magnitude": 0.0001,
+      "maximum_perturbed_radius": 0.6165177372817726,
+      "response_delta_norm": 0.00003066470737086719
+    },
+    {
+      "bound_ratio": 0.045272732399556176,
+      "coefficient_spam_error_norm": 0.000026242114181894453,
+      "direction_index": 5,
+      "equation_43_bound": 0.0005796450267302999,
+      "magnitude": 0.0001,
+      "maximum_perturbed_radius": 0.6165272804556512,
+      "response_delta_norm": 0.000029153708749590345
+    },
+    {
+      "bound_ratio": 0.15753716688004962,
+      "coefficient_spam_error_norm": 0.00009131563530720208,
+      "direction_index": 6,
+      "equation_43_bound": 0.0005796450267302999,
+      "magnitude": 0.0001,
+      "maximum_perturbed_radius": 0.6165162867542355,
+      "response_delta_norm": 0.000046713132405475945
+    },
+    {
+      "bound_ratio": 0.17564139698492043,
+      "coefficient_spam_error_norm": 0.00010180966225027141,
+      "direction_index": 7,
+      "equation_43_bound": 0.0005796450267302999,
+      "magnitude": 0.0001,
+      "maximum_perturbed_radius": 0.6165202747518347,
+      "response_delta_norm": 0.000044496226552170215
+    },
+    {
+      "bound_ratio": 0.14114385951191433,
+      "coefficient_spam_error_norm": 0.00008181333621960126,
+      "direction_index": 8,
+      "equation_43_bound": 0.0005796450267302998,
+      "magnitude": 0.0001,
+      "maximum_perturbed_radius": 0.6165294815206371,
+      "response_delta_norm": 0.0000517196672944713
+    },
+    {
+      "bound_ratio": 0.1217579344232961,
+      "coefficient_spam_error_norm": 0.00007057638115341757,
+      "direction_index": 9,
+      "equation_43_bound": 0.0005796450267302999,
+      "magnitude": 0.0001,
+      "maximum_perturbed_radius": 0.6165349859282164,
+      "response_delta_norm": 0.00004210473956616365
+    },
+    {
+      "bound_ratio": 0.09599629061431121,
+      "coefficient_spam_error_norm": 0.00005564377243914206,
+      "direction_index": 10,
+      "equation_43_bound": 0.0005796450267302999,
+      "magnitude": 0.0001,
+      "maximum_perturbed_radius": 0.6165266853955933,
+      "response_delta_norm": 0.00003199810972070022
+    },
+    {
+      "bound_ratio": 0.05289442812952496,
+      "coefficient_spam_error_norm": 0.00003065999220702242,
+      "direction_index": 11,
+      "equation_43_bound": 0.0005796450267302999,
+      "magnitude": 0.0001,
+      "maximum_perturbed_radius": 0.6165536958631528,
+      "response_delta_norm": 0.0000410911087037975
+    },
+    {
+      "bound_ratio": 0.11963592431320266,
+      "coefficient_spam_error_norm": 0.00020803910563929143,
+      "direction_index": 0,
+      "equation_43_bound": 0.0017389350801908993,
+      "magnitude": 0.0003,
+      "maximum_perturbed_radius": 0.6165417550080998,
+      "response_delta_norm": 0.00009722804489664632
+    },
+    {
+      "bound_ratio": 0.16887646987505153,
+      "coefficient_spam_error_norm": 0.00029366521768452874,
+      "direction_index": 1,
+      "equation_43_bound": 0.0017389350801908993,
+      "magnitude": 0.0003,
+      "maximum_perturbed_radius": 0.6166173152654231,
+      "response_delta_norm": 0.0001421048682657036
+    },
+    {
+      "bound_ratio": 0.03494685100635545,
+      "coefficient_spam_error_norm": 0.00006077030515715613,
+      "direction_index": 2,
+      "equation_43_bound": 0.0017389350801908993,
+      "magnitude": 0.0003,
+      "maximum_perturbed_radius": 0.6165684816034843,
+      "response_delta_norm": 0.0001248383676228457
+    },
+    {
+      "bound_ratio": 0.11339621442159754,
+      "coefficient_spam_error_norm": 0.0001971886552185651,
+      "direction_index": 3,
+      "equation_43_bound": 0.001738935080190899,
+      "magnitude": 0.0003,
+      "maximum_perturbed_radius": 0.6165385055432763,
+      "response_delta_norm": 0.00012752321802763018
+    },
+    {
+      "bound_ratio": 0.026114424975891355,
+      "coefficient_spam_error_norm": 0.000045411289689590854,
+      "direction_index": 4,
+      "equation_43_bound": 0.0017389350801908993,
+      "magnitude": 0.0003,
+      "maximum_perturbed_radius": 0.6165405178069864,
+      "response_delta_norm": 0.00009199454710002047
+    },
+    {
+      "bound_ratio": 0.04527628222667122,
+      "coefficient_spam_error_norm": 0.0000787325154645823,
+      "direction_index": 5,
+      "equation_43_bound": 0.0017389350801908993,
+      "magnitude": 0.0003,
+      "maximum_perturbed_radius": 0.6165691443996579,
+      "response_delta_norm": 0.0000874626324619297
+    },
+    {
+      "bound_ratio": 0.157544747080439,
+      "coefficient_spam_error_norm": 0.00027396008739797814,
+      "direction_index": 6,
+      "equation_43_bound": 0.0017389350801908993,
+      "magnitude": 0.0003,
+      "maximum_perturbed_radius": 0.6165361596679415,
+      "response_delta_norm": 0.00014013470563205863
+    },
+    {
+      "bound_ratio": 0.1756475006287572,
+      "coefficient_spam_error_norm": 0.0003054396005911989,
+      "direction_index": 7,
+      "equation_43_bound": 0.0017389350801908993,
+      "magnitude": 0.0003,
+      "maximum_perturbed_radius": 0.6165481223895354,
+      "response_delta_norm": 0.00013349100944075806
+    },
+    {
+      "bound_ratio": 0.1411400571662194,
+      "coefficient_spam_error_norm": 0.00024543339662648787,
+      "direction_index": 8,
+      "equation_43_bound": 0.0017389350801908993,
+      "magnitude": 0.0003,
+      "maximum_perturbed_radius": 0.6165757437561074,
+      "response_delta_norm": 0.0001551576051747179
+    },
+    {
+      "bound_ratio": 0.12175878465399959,
+      "coefficient_spam_error_norm": 0.0002117306219562492,
+      "direction_index": 9,
+      "equation_43_bound": 0.0017389350801908993,
+      "magnitude": 0.0003,
+      "maximum_perturbed_radius": 0.6165922559100077,
+      "response_delta_norm": 0.00012631342963206467
+    },
+    {
+      "bound_ratio": 0.09598353594697553,
+      "coefficient_spam_error_norm": 0.00016690913777895998,
+      "direction_index": 10,
+      "equation_43_bound": 0.0017389350801908993,
+      "magnitude": 0.0003,
+      "maximum_perturbed_radius": 0.6165673544024899,
+      "response_delta_norm": 0.00009599148753212978
+    },
+    {
+      "bound_ratio": 0.05290003795739494,
+      "coefficient_spam_error_norm": 0.00009198973174754418,
+      "direction_index": 11,
+      "equation_43_bound": 0.0017389350801908993,
+      "magnitude": 0.0003,
+      "maximum_perturbed_radius": 0.6166483864608153,
+      "response_delta_norm": 0.00012328044190138842
+    },
+    {
+      "bound_ratio": 0.11968588371840976,
+      "coefficient_spam_error_norm": 0.000693753272671972,
+      "direction_index": 0,
+      "equation_43_bound": 0.005796450267303,
+      "magnitude": 0.001,
+      "maximum_perturbed_radius": 0.6166243713095314,
+      "response_delta_norm": 0.00032416164944843346
+    },
+    {
+      "bound_ratio": 0.1688724972581705,
+      "coefficient_spam_error_norm": 0.0009788610318722474,
+      "direction_index": 1,
+      "equation_43_bound": 0.005796450267302999,
+      "magnitude": 0.001,
+      "maximum_perturbed_radius": 0.6168762324607935,
+      "response_delta_norm": 0.0004737130794587657
+    },
+    {
+      "bound_ratio": 0.0349774713104569,
+      "coefficient_spam_error_norm": 0.00020274517292708086,
+      "direction_index": 2,
+      "equation_43_bound": 0.005796450267302999,
+      "magnitude": 0.001,
+      "maximum_perturbed_radius": 0.6167135179812607,
+      "response_delta_norm": 0.00041616289903631293
+    },
+    {
+      "bound_ratio": 0.11338693752092391,
+      "coefficient_spam_error_norm": 0.0006572417443018277,
+      "direction_index": 3,
+      "equation_43_bound": 0.005796450267302997,
+      "magnitude": 0.001,
+      "maximum_perturbed_radius": 0.6166135567512108,
+      "response_delta_norm": 0.0004250583986307937
+    },
+    {
+      "bound_ratio": 0.026097278492714166,
+      "coefficient_spam_error_norm": 0.00015127157689497384,
+      "direction_index": 4,
+      "equation_43_bound": 0.005796450267302999,
+      "magnitude": 0.001,
+      "maximum_perturbed_radius": 0.6166203320958198,
+      "response_delta_norm": 0.00030665346084890525
+    },
+    {
+      "bound_ratio": 0.04528870762092989,
+      "coefficient_spam_error_norm": 0.0002625137413951464,
+      "direction_index": 5,
+      "equation_43_bound": 0.005796450267302999,
+      "magnitude": 0.001,
+      "maximum_perturbed_radius": 0.6167157198978275,
+      "response_delta_norm": 0.0002915597010835215
+    },
+    {
+      "bound_ratio": 0.1575712805019811,
+      "coefficient_spam_error_norm": 0.0009133540909849842,
+      "direction_index": 6,
+      "equation_43_bound": 0.005796450267302999,
+      "magnitude": 0.001,
+      "maximum_perturbed_radius": 0.6166057284869871,
+      "response_delta_norm": 0.00046706096103265796
+    },
+    {
+      "bound_ratio": 0.17566886374513968,
+      "coefficient_spam_error_norm": 0.001018255832212329,
+      "direction_index": 7,
+      "equation_43_bound": 0.005796450267302999,
+      "magnitude": 0.001,
+      "maximum_perturbed_radius": 0.616645589397059,
+      "response_delta_norm": 0.00044499721970187327
+    },
+    {
+      "bound_ratio": 0.14112675189125717,
+      "coefficient_spam_error_norm": 0.0008180341987236814,
+      "direction_index": 8,
+      "equation_43_bound": 0.005796450267302997,
+      "magnitude": 0.001,
+      "maximum_perturbed_radius": 0.6167376729833355,
+      "response_delta_norm": 0.0005171757286154579
+    },
+    {
+      "bound_ratio": 0.12176176519042452,
+      "coefficient_spam_error_norm": 0.0007057860163853212,
+      "direction_index": 9,
+      "equation_43_bound": 0.005796450267302999,
+      "magnitude": 0.001,
+      "maximum_perturbed_radius": 0.616792701030759,
+      "response_delta_norm": 0.00042103557149399573
+    },
+    {
+      "bound_ratio": 0.09593889498505305,
+      "coefficient_spam_error_norm": 0.0005561050334808651,
+      "direction_index": 10,
+      "equation_43_bound": 0.005796450267302999,
+      "magnitude": 0.001,
+      "maximum_perturbed_radius": 0.6167096970595114,
+      "response_delta_norm": 0.00031993848851966095
+    },
+    {
+      "bound_ratio": 0.05291967274054293,
+      "coefficient_spam_error_norm": 0.0003067462512025073,
+      "direction_index": 11,
+      "equation_43_bound": 0.005796450267302999,
+      "magnitude": 0.001,
+      "maximum_perturbed_radius": 0.6169798115640335,
+      "response_delta_norm": 0.00041101783536816924
+    },
+    {
+      "bound_ratio": 0.11982862839703537,
+      "coefficient_spam_error_norm": 0.0020837420553076426,
+      "direction_index": 0,
+      "equation_43_bound": 0.017389350801909,
+      "magnitude": 0.003,
+      "maximum_perturbed_radius": 0.6168604704929137,
+      "response_delta_norm": 0.0009730693814418967
+    },
+    {
+      "bound_ratio": 0.1688611536637844,
+      "coefficient_spam_error_norm": 0.002936385837874608,
+      "direction_index": 1,
+      "equation_43_bound": 0.017389350801909,
+      "magnitude": 0.003,
+      "maximum_perturbed_radius": 0.6176159993436834,
+      "response_delta_norm": 0.0014213981291775206
+    },
+    {
+      "bound_ratio": 0.03506513860940223,
+      "coefficient_spam_error_norm": 0.000609759996196459,
+      "direction_index": 2,
+      "equation_43_bound": 0.017389350801909,
+      "magnitude": 0.003,
+      "maximum_perturbed_radius": 0.6171284073524114,
+      "response_delta_norm": 0.001248789177710571
+    },
+    {
+      "bound_ratio": 0.11336044050230462,
+      "coefficient_spam_error_norm": 0.0019712644669535075,
+      "direction_index": 3,
+      "equation_43_bound": 0.017389350801908992,
+      "magnitude": 0.003,
+      "maximum_perturbed_radius": 0.6168281723902677,
+      "response_delta_norm": 0.0012750128132287925
+    },
+    {
+      "bound_ratio": 0.026048345328330544,
+      "coefficient_spam_error_norm": 0.00045296381472360707,
+      "direction_index": 4,
+      "equation_43_bound": 0.017389350801908992,
+      "magnitude": 0.003,
+      "maximum_perturbed_radius": 0.6168490792611373,
+      "response_delta_norm": 0.0009200033041363338
+    },
+    {
+      "bound_ratio": 0.04532421733329964,
+      "coefficient_spam_error_norm": 0.0007881587150307115,
+      "direction_index": 5,
+      "equation_43_bound": 0.017389350801908992,
+      "magnitude": 0.003,
+      "maximum_perturbed_radius": 0.6171349496919915,
+      "response_delta_norm": 0.0008748304234742171
+    },
+    {
+      "bound_ratio": 0.1576471135763015,
+      "coefficient_spam_error_norm": 0.0027413809608866978,
+      "direction_index": 6,
+      "equation_43_bound": 0.017389350801909,
+      "magnitude": 0.003,
+      "maximum_perturbed_radius": 0.6168046132389062,
+      "response_delta_norm": 0.0014007140932920906
+    },
+    {
+      "bound_ratio": 0.17572990428894833,
+      "coefficient_spam_error_norm": 0.003055828952066414,
+      "direction_index": 7,
+      "equation_43_bound": 0.017389350801908992,
+      "magnitude": 0.003,
+      "maximum_perturbed_radius": 0.6169240689219054,
+      "response_delta_norm": 0.0013352248914202738
+    },
+    {
+      "bound_ratio": 0.1410887619761677,
+      "coefficient_spam_error_norm": 0.0024534419762106186,
+      "direction_index": 8,
+      "equation_43_bound": 0.017389350801908992,
+      "magnitude": 0.003,
+      "maximum_perturbed_radius": 0.6172004255527338,
+      "response_delta_norm": 0.0015513877308618316
+    },
+    {
+      "bound_ratio": 0.12177032148510857,
+      "coefficient_spam_error_norm": 0.002117506837565789,
+      "direction_index": 9,
+      "equation_43_bound": 0.017389350801909,
+      "magnitude": 0.003,
+      "maximum_perturbed_radius": 0.6173654029549096,
+      "response_delta_norm": 0.0012630282131504697
+    },
+    {
+      "bound_ratio": 0.09581135261375977,
+      "coefficient_spam_error_norm": 0.0016660972214060689,
+      "direction_index": 10,
+      "equation_43_bound": 0.017389350801908995,
+      "magnitude": 0.003,
+      "maximum_perturbed_radius": 0.6171164000664369,
+      "response_delta_norm": 0.0009595318432648376
+    },
+    {
+      "bound_ratio": 0.05297577537251814,
+      "coefficient_spam_error_norm": 0.0009212143419558489,
+      "direction_index": 11,
+      "equation_43_bound": 0.017389350801908992,
+      "magnitude": 0.003,
+      "maximum_perturbed_radius": 0.6179268089469213,
+      "response_delta_norm": 0.0012337654784398662
+    },
+    {
+      "bound_ratio": 0.12032827562888426,
+      "coefficient_spam_error_norm": 0.006974768654331552,
+      "direction_index": 0,
+      "equation_43_bound": 0.057964502673029994,
+      "magnitude": 0.01,
+      "maximum_perturbed_radius": 0.6176874302550663,
+      "response_delta_norm": 0.003250388774481258
+    },
+    {
+      "bound_ratio": 0.1688215297308742,
+      "coefficient_spam_error_norm": 0.009785656011350268,
+      "direction_index": 1,
+      "equation_43_bound": 0.05796450267302999,
+      "magnitude": 0.01,
+      "maximum_perturbed_radius": 0.620205223654472,
+      "response_delta_norm": 0.004741020379988261
+    },
+    {
+      "bound_ratio": 0.03537405709666668,
+      "coefficient_spam_error_norm": 0.0020504396271356514,
+      "direction_index": 2,
+      "equation_43_bound": 0.05796450267302999,
+      "magnitude": 0.01,
+      "maximum_perturbed_radius": 0.6185863312308985,
+      "response_delta_norm": 0.00416615255061991
+    },
+    {
+      "bound_ratio": 0.11326779918922159,
+      "coefficient_spam_error_norm": 0.006565511648871859,
+      "direction_index": 3,
+      "equation_43_bound": 0.05796450267302999,
+      "magnitude": 0.01,
+      "maximum_perturbed_radius": 0.6175814657040486,
+      "response_delta_norm": 0.004248164973503418
+    },
+    {
+      "bound_ratio": 0.025877747840938565,
+      "coefficient_spam_error_norm": 0.0014999907838980794,
+      "direction_index": 4,
+      "equation_43_bound": 0.05796450267302999,
+      "magnitude": 0.01,
+      "maximum_perturbed_radius": 0.6176579201190295,
+      "response_delta_norm": 0.0030671907639197417
+    },
+    {
+      "bound_ratio": 0.045448601119699526,
+      "coefficient_spam_error_norm": 0.0026344055610882967,
+      "direction_index": 5,
+      "equation_43_bound": 0.05796450267302999,
+      "magnitude": 0.01,
+      "maximum_perturbed_radius": 0.6186074013025956,
+      "response_delta_norm": 0.0029178871800814563
+    },
+    {
+      "bound_ratio": 0.157912800504265,
+      "coefficient_spam_error_norm": 0.00915333694693512,
+      "direction_index": 6,
+      "equation_43_bound": 0.05796450267302999,
+      "magnitude": 0.01,
+      "maximum_perturbed_radius": 0.6175020692133022,
+      "response_delta_norm": 0.004663588535088046
+    },
+    {
+      "bound_ratio": 0.17594358193052514,
+      "coefficient_spam_error_norm": 0.010198482225114396,
+      "direction_index": 7,
+      "equation_43_bound": 0.05796450267302999,
+      "magnitude": 0.01,
+      "maximum_perturbed_radius": 0.6178987747377598,
+      "response_delta_norm": 0.00445347807701751
+    },
+    {
+      "bound_ratio": 0.1409560911437567,
+      "coefficient_spam_error_norm": 0.008170449721882144,
+      "direction_index": 8,
+      "equation_43_bound": 0.05796450267302999,
+      "magnitude": 0.01,
+      "maximum_perturbed_radius": 0.6188211944821329,
+      "response_delta_norm": 0.005169671759229416
+    },
+    {
+      "bound_ratio": 0.12180074058092584,
+      "coefficient_spam_error_norm": 0.007060119352980108,
+      "direction_index": 9,
+      "equation_43_bound": 0.05796450267302999,
+      "magnitude": 0.01,
+      "maximum_perturbed_radius": 0.6193698780301955,
+      "response_delta_norm": 0.004209190017874909
+    },
+    {
+      "bound_ratio": 0.0953649922863785,
+      "coefficient_spam_error_norm": 0.00552778435029727,
+      "direction_index": 10,
+      "equation_43_bound": 0.05796450267302999,
+      "magnitude": 0.01,
+      "maximum_perturbed_radius": 0.6185399734098189,
+      "response_delta_norm": 0.00319514634649739
+    },
+    {
+      "bound_ratio": 0.05317217232106973,
+      "coefficient_spam_error_norm": 0.0030820985246354576,
+      "direction_index": 11,
+      "equation_43_bound": 0.05796450267302999,
+      "magnitude": 0.01,
+      "maximum_perturbed_radius": 0.6212420932364952,
+      "response_delta_norm": 0.004120869376181199
+    }
+  ],
+  "verdict": "VERIFIED"
+}
