@@ -1,0 +1,1 @@
+{"checker": "claim1_verify.py", "failures": ["rpe_coefficient_slope_is_heisenberg"], "passed": false}

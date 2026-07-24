@@ -15,6 +15,12 @@
     "file": "pages/index.md",
     "children": [
       {
+        "slug": "claim-1-current",
+        "title": "Claim 1: multi-mode Heisenberg scaling — VERIFIED",
+        "file": "pages/claim-1-current/page.md",
+        "children": []
+      },
+      {
         "slug": "claim-3-current",
         "title": "Claim 3: displacement-SPAM bound — VERIFIED",
         "file": "pages/claim-3-current/page.md",

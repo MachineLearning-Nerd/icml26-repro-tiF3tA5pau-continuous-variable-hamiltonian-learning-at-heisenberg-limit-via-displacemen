@@ -4,6 +4,7 @@
 
 | Page |
 | --- |
+| [Claim 1: multi-mode Heisenberg scaling — VERIFIED](#/claim-1-current) |
 | [Claim 3: displacement-SPAM bound — VERIFIED](#/claim-3-current) |
 | [Claim 4: covariance domination certificate — VERIFIED](#/claim-4-current) |
 | [Claim 5: Bogoliubov squeezing search — VERIFIED](#/claim-5-current) |
