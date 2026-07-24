@@ -1,0 +1,5831 @@
+{
+  "acceptance_checks": {
+    "all_disjoint_noisy_validations_pass": true,
+    "barren_plateau_control_has_no_sign_bracket": true,
+    "bogoliubov_signal_identity_is_exact": true,
+    "calibration_independently_finds_adequate_rpe_level": true,
+    "discrete_twirl_is_number_diagonal": true,
+    "exact_interval_contraction_certificate": true,
+    "finite_fock_drut_matches_bogoliubov_response": true,
+    "historical_x_squared_proxy_has_no_sign_bracket": true,
+    "iteration_count_increases_one_per_precision_halving": true,
+    "known_zero_coefficient_vanishes_at_physical_basis": true,
+    "reference_frame_satisfies_rpe_overlap_condition": true,
+    "selected_rpe_level_is_not_underpowered_control": true,
+    "signal_has_nonzero_linear_response": true
+  },
+  "assumptions": [
+    "the initial interval brackets the physical squeezing parameter",
+    "g'20 is known to vanish in the physical basis",
+    "the signal has nonzero response K at DeltaR=0",
+    "the reference basis satisfies the stated RPE overlap condition",
+    "the D-RUT/RPE inner oracle resolves the signal sign"
+  ],
+  "calibration": [
+    {
+      "max_level": 8,
+      "passes_calibration": false,
+      "success_rate": 0.8125,
+      "successes": 52,
+      "trials": 64,
+      "wilson_95_lower": 0.7002540844522482
+    },
+    {
+      "max_level": 10,
+      "passes_calibration": true,
+      "success_rate": 1.0,
+      "successes": 64,
+      "trials": 64,
+      "wilson_95_lower": 0.9433739770288436
+    },
+    {
+      "max_level": 12,
+      "passes_calibration": true,
+      "success_rate": 1.0,
+      "successes": 64,
+      "trials": 64,
+      "wilson_95_lower": 0.9433739770288436
+    },
+    {
+      "max_level": 14,
+      "passes_calibration": true,
+      "success_rate": 1.0,
+      "successes": 64,
+      "trials": 64,
+      "wilson_95_lower": 0.9433739770288436
+    },
+    {
+      "max_level": 16,
+      "passes_calibration": true,
+      "success_rate": 1.0,
+      "successes": 64,
+      "trials": 64,
+      "wilson_95_lower": 0.9433739770288436
+    }
+  ],
+  "claim": 5,
+  "configuration": {
+    "calibration_delta": 0.0002,
+    "calibration_repetitions_per_sign": 32,
+    "fock_cutoff": 24,
+    "phase_count": 29,
+    "radii": [
+      0.6165063509461097,
+      0.4,
+      0.18349364905389035
+    ],
+    "rpe_level_candidates": [
+      8,
+      10,
+      12,
+      14,
+      16
+    ],
+    "search_interval": [
+      0.0,
+      0.4
+    ],
+    "shots_per_basis": 256,
+    "target_precisions": [
+      0.05,
+      0.025,
+      0.0125,
+      0.00625,
+      0.003125
+    ],
+    "true_squeezing_parameter": 0.17320508075688773,
+    "validation_repetitions": 32
+  },
+  "metrics": {
+    "iteration_log2_inverse_precision_slope": 0.9999999999999991,
+    "iterations": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "maximum_fock_vs_analytic_response_error": 3.885780586188048E-16,
+    "maximum_twirl_off_diagonal_frobenius": 6.927042538212428E-15,
+    "unique_bogoliubov_oracle_points": 8
+  },
+  "negative_controls": {
+    "barren_plateau_endpoint_signs": [
+      0.0,
+      0.0
+    ],
+    "historical_x_squared_endpoint_signs": [
+      0.0,
+      0.16000000000000003
+    ],
+    "lowest_rpe_level": {
+      "max_level": 8,
+      "passes_calibration": false,
+      "success_rate": 0.8125,
+      "successes": 52,
+      "trials": 64,
+      "wilson_95_lower": 0.7002540844522482
+    }
+  },
+  "overlap_audit": {
+    "left_side": 2.030075075040192,
+    "passes": true,
+    "right_side": 3.732050807568876
+  },
+  "proof_statement": "For the Bogoliubov signal g'20(DeltaR)=(omega/2)sinh(2 DeltaR), a valid sign bracket contracts from width W to W/2^n after n bisections; midpoint error is at most W/2^(n+1), hence n=ceil(log2(W/(2 epsilon_R))).",
+  "resources": {
+    "backend": "local",
+    "estimated_cpu_cores": 1,
+    "host_visible_cpu_allocation": 8,
+    "runtime_seconds_inside_verifier": 1.8177479590012808,
+    "thread_cap": 1,
+    "total_ancilla_shots": 34406400,
+    "total_simulated_evolution_time": 38349766656
+  },
+  "seed": 505251008419,
+  "selected_rpe_max_level": 10,
+  "software": {
+    "numpy": "2.2.6",
+    "python": "3.12.11",
+    "scipy": "1.15.3",
+    "sympy": "1.14.0"
+  },
+  "source": {
+    "anchors": [
+      "Section 5.3",
+      "Equations (71)-(78)",
+      "Section 6.1 outer and inner loops"
+    ],
+    "arxiv_id": "2510.08419v1",
+    "pdf_sha256": "88c58a90096ad67bea10336322a33d15a76367d59a7195ef30266c702652b2c7"
+  },
+  "symbolic_certificate": {
+    "derivative_at_zero": "1",
+    "double_angle_identity_exact": true,
+    "double_angle_signal": "sinh(2*Delta_R)/2",
+    "known_zero_at_physical_basis": true,
+    "nonzero_linear_response": true,
+    "signal": "sinh(Delta_R)*cosh(Delta_R)",
+    "signal_at_zero": "0"
+  },
+  "validation_records": [
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02678021866737895
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07347454343578037
+        }
+      ],
+      "replicate": 0,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02686469717826536
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346619675260369
+        }
+      ],
+      "replicate": 1,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026833385174780143
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07344726788469537
+        }
+      ],
+      "replicate": 2,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02687163499806288
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07341355740897407
+        }
+      ],
+      "replicate": 3,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02681442878773901
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07342558300672825
+        }
+      ],
+      "replicate": 4,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026767544267167515
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07347128089316936
+        }
+      ],
+      "replicate": 5,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026775550737224044
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734991947618827
+        }
+      ],
+      "replicate": 6,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026829509854311845
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734334954767541
+        }
+      ],
+      "replicate": 7,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026850168363335182
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07345593774879683
+        }
+      ],
+      "replicate": 8,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026695173972758238
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07341530444372468
+        }
+      ],
+      "replicate": 9,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026688837669039987
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.073451945556584
+        }
+      ],
+      "replicate": 10,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026775002966943854
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07338644035296799
+        }
+      ],
+      "replicate": 11,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02676150956906214
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346468252911835
+        }
+      ],
+      "replicate": 12,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026791319572420168
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07355263955093594
+        }
+      ],
+      "replicate": 13,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02667114524981149
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346324178043921
+        }
+      ],
+      "replicate": 14,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026851513901612153
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07348343675078664
+        }
+      ],
+      "replicate": 15,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02681344049438009
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07345882497698512
+        }
+      ],
+      "replicate": 16,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026706125388749072
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07342478136688366
+        }
+      ],
+      "replicate": 17,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026784319160349592
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07343233093522519
+        }
+      ],
+      "replicate": 18,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02677438121537846
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07347327590475045
+        }
+      ],
+      "replicate": 19,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02689869774453383
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07339136051489892
+        }
+      ],
+      "replicate": 20,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026830477254501273
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07352457476659326
+        }
+      ],
+      "replicate": 21,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02678657314551334
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07353951461370234
+        }
+      ],
+      "replicate": 22,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026845874417822158
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07343944946481429
+        }
+      ],
+      "replicate": 23,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026826178770658786
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07345689663874745
+        }
+      ],
+      "replicate": 24,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026813487699183132
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07347861320490136
+        }
+      ],
+      "replicate": 25,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02682281170477226
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07339917598117049
+        }
+      ],
+      "replicate": 26,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026824190470411742
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734705657535401
+        }
+      ],
+      "replicate": 27,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026796370435176225
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734539531842151
+        }
+      ],
+      "replicate": 28,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026761563593782258
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07345524602099794
+        }
+      ],
+      "replicate": 29,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026859838522280417
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346058874253587
+        }
+      ],
+      "replicate": 30,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.023205080756887708,
+      "estimate": 0.15000000000000002,
+      "final_bracket_width": 0.1,
+      "iterations": 2,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026827308654268977
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07344253774160897
+        }
+      ],
+      "replicate": 31,
+      "success": true,
+      "target_precision": 0.05
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026813830910039544
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07348082394080688
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023174789316451658
+        }
+      ],
+      "replicate": 0,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026963716619136217
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734884764954851
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02327023811741386
+        }
+      ],
+      "replicate": 1,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026792948145632135
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07347397916638518
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023191607832732702
+        }
+      ],
+      "replicate": 2,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026749419714826327
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07349627723908912
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02319317053962369
+        }
+      ],
+      "replicate": 3,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026786590089429296
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07351048280985566
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023160312831947756
+        }
+      ],
+      "replicate": 4,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02672314078738124
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07349730659789035
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023146549093739668
+        }
+      ],
+      "replicate": 5,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02679231903005904
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07342998618086978
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02313918878963999
+        }
+      ],
+      "replicate": 6,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026762884603539996
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07349019872676031
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02327051121162072
+        }
+      ],
+      "replicate": 7,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026834148775393044
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734530761380659
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02320561449225866
+        }
+      ],
+      "replicate": 8,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02680173472786931
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07336804273391326
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02316921525760533
+        }
+      ],
+      "replicate": 9,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.0267955966284973
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0735100778476359
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.0232799720368132
+        }
+      ],
+      "replicate": 10,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02680142536014184
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346734518953725
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02324611301007945
+        }
+      ],
+      "replicate": 11,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02682869863201859
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07341817165206427
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02316571713238585
+        }
+      ],
+      "replicate": 12,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026821147141025348
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734758289673333
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023186424585047025
+        }
+      ],
+      "replicate": 13,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02680676403295992
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07337068400598913
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023241546912338616
+        }
+      ],
+      "replicate": 14,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026806586803837813
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07345197292216704
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02313132456963353
+        }
+      ],
+      "replicate": 15,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02678358572495536
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346011368283258
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023186789554285114
+        }
+      ],
+      "replicate": 16,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.0267797669076688
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07349774488645303
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02317276981467625
+        }
+      ],
+      "replicate": 17,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026766267716395842
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0735013934946533
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023203892159653915
+        }
+      ],
+      "replicate": 18,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026807128235151176
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07349863632522198
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02322047174272823
+        }
+      ],
+      "replicate": 19,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026804508854860087
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734202842531205
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02326346723006706
+        }
+      ],
+      "replicate": 20,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026790516979227717
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07343977279128756
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02326734163550799
+        }
+      ],
+      "replicate": 21,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026739318335402554
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0733778329383
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02321073277503838
+        }
+      ],
+      "replicate": 22,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02677409428314259
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07345592486919389
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02315999529882636
+        }
+      ],
+      "replicate": 23,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026908551990348376
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346647865159113
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023222828536757806
+        }
+      ],
+      "replicate": 24,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02679311486157806
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07344800406416839
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023222366123886153
+        }
+      ],
+      "replicate": 25,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026853111806975975
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734736778131677
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023203044171043817
+        }
+      ],
+      "replicate": 26,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026777075224872528
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07345443159533031
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023159560818053416
+        }
+      ],
+      "replicate": 27,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02675955910150018
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07343305641547657
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023161572219013493
+        }
+      ],
+      "replicate": 28,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026755005681006118
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346491688020286
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023206318801638853
+        }
+      ],
+      "replicate": 29,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02689402916369319
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07350357684602625
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023254476526455025
+        }
+      ],
+      "replicate": 30,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.0017949192431122862,
+      "estimate": 0.17500000000000002,
+      "final_bracket_width": 0.04999999999999999,
+      "iterations": 3,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026802478331369915
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07347486175938003
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023155370453810106
+        }
+      ],
+      "replicate": 31,
+      "success": true,
+      "target_precision": 0.025
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02683025507174262
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07343267626752951
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023225946433426434
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017827022765015592
+        }
+      ],
+      "replicate": 0,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026824257959770722
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07347195715237703
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023219766614142705
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018287240079323335
+        }
+      ],
+      "replicate": 1,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026728742771589865
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07344995386933671
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023248152819079534
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017843926688166816
+        }
+      ],
+      "replicate": 2,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026795341691754803
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07348808317320053
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02325212610548846
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018565265254642
+        }
+      ],
+      "replicate": 3,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026873536105483552
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07348682888835378
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023319144876743907
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018069040793834937
+        }
+      ],
+      "replicate": 4,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026902917188489292
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07347969809881581
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023198389517932048
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001862064962910319
+        }
+      ],
+      "replicate": 5,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026822284861517606
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07343424720141907
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023246743556400492
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017767694088804895
+        }
+      ],
+      "replicate": 6,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02682620308287622
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07347128362004542
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02322777202755738
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001770647491135992
+        }
+      ],
+      "replicate": 7,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026773472990027712
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734602345861481
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02316704550363979
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001775792271806888
+        }
+      ],
+      "replicate": 8,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02683975401989679
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0735114220792944
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02320588019991315
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018059096025510825
+        }
+      ],
+      "replicate": 9,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026802798118823586
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07348285354687947
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02318017501900487
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018361656782381376
+        }
+      ],
+      "replicate": 10,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026720031721370118
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0735002896847902
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02322332205908859
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017852290491751697
+        }
+      ],
+      "replicate": 11,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02684214323480368
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07352073644945209
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023238908858956433
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018738167545876833
+        }
+      ],
+      "replicate": 12,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026798953149167415
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07345850789557702
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.0232180369968871
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017448813942645533
+        }
+      ],
+      "replicate": 13,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026813124113533763
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346449950003325
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023233292468429294
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001757898299292403
+        }
+      ],
+      "replicate": 14,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02683595585167199
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734961757063184
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023211317678459055
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018074928869371162
+        }
+      ],
+      "replicate": 15,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.0268432462877128
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0735046621896511
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023066912345992948
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018201291514886456
+        }
+      ],
+      "replicate": 16,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02675390627454702
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07352839327250343
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023222046921214195
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018125088951312358
+        }
+      ],
+      "replicate": 17,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02679127253455489
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07347847756476616
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023116985560175312
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018539789810941359
+        }
+      ],
+      "replicate": 18,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026746476971457687
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07344840536936016
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023280941269943425
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017729339132702415
+        }
+      ],
+      "replicate": 19,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026801988187398748
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07343104086190354
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02320369875497196
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018374742300140078
+        }
+      ],
+      "replicate": 20,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026843914096554185
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07344091317576551
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023242360616549065
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0016503585941227317
+        }
+      ],
+      "replicate": 21,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026738951530688098
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07350929220112609
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023258800131483532
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017740710300502588
+        }
+      ],
+      "replicate": 22,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02684194044165217
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07338459259933793
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02318168644892388
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018398383785145607
+        }
+      ],
+      "replicate": 23,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026729949029303587
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07342927831727715
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023101185697081313
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018040046262775748
+        }
+      ],
+      "replicate": 24,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02672819965163698
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07350371488096244
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023218743422361177
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018338068420970903
+        }
+      ],
+      "replicate": 25,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026799424443403767
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07344099140653895
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023123093880343816
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017134454890414483
+        }
+      ],
+      "replicate": 26,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02670077484966553
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346063378922345
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023251201230463685
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017812142083034482
+        }
+      ],
+      "replicate": 27,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026800020686456948
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07343005313301033
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02325587507437359
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018031970918944192
+        }
+      ],
+      "replicate": 28,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02685116427437222
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07348318441628975
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023162786134735276
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018402751284574978
+        }
+      ],
+      "replicate": 29,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026813402938106065
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734619694339588
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023227027597770844
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018092769588945671
+        }
+      ],
+      "replicate": 30,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.010705080756887697,
+      "estimate": 0.16250000000000003,
+      "final_bracket_width": 0.024999999999999994,
+      "iterations": 4,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026827032938744666
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.073446435053928
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023173221547743626
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001806648477754625
+        }
+      ],
+      "replicate": 31,
+      "success": true,
+      "target_precision": 0.0125
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02678957622867296
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07354178561100112
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023269482850138808
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018156014187019176
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010736025666120632
+        }
+      ],
+      "replicate": 0,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026811079810904
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07351431336444153
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023186143137308317
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017486656901932681
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01074089496649179
+        }
+      ],
+      "replicate": 1,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02672893994226528
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07349538355880153
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023154047530393945
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017179924996557807
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010700651554001019
+        }
+      ],
+      "replicate": 2,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026736879744938512
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734809281119605
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023213812262492337
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017708153835412116
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01069543980004442
+        }
+      ],
+      "replicate": 3,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026880679341844713
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07347887918843904
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02313167640147032
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017568690118464085
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01067142525579191
+        }
+      ],
+      "replicate": 4,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02685724599430596
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07349915134182751
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023181058057387013
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017690037422999447
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010762608133182179
+        }
+      ],
+      "replicate": 5,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02683462695106527
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07337557641013555
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023165597220108285
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018894705275048556
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01065854974266777
+        }
+      ],
+      "replicate": 6,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026837848615701845
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734897871142039
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02316273207415073
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017794741420651217
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010657316872299753
+        }
+      ],
+      "replicate": 7,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02683214592088283
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07342741809826493
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023244140515933542
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018659016493986736
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010689941895091728
+        }
+      ],
+      "replicate": 8,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02682569868827634
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734132112565664
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02323315010770878
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018061314112360605
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01069798092638604
+        }
+      ],
+      "replicate": 9,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02678264610967797
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734285237893087
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023211450885785023
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001843595220432944
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01063931086948638
+        }
+      ],
+      "replicate": 10,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026778825536271034
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07344223157175828
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023185728489544425
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017506035734023446
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010745323054732863
+        }
+      ],
+      "replicate": 11,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02682853178932871
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07353203994141087
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023194430030437682
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017127161221515285
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010664417596216771
+        }
+      ],
+      "replicate": 12,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026847820576006386
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07348962848815818
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023127953552851476
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001808959145617965
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010725686110679651
+        }
+      ],
+      "replicate": 13,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.0268677158308467
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734671644706083
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023227315554009444
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018382354104779426
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010660451699196178
+        }
+      ],
+      "replicate": 14,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026818561623735793
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07349031495514079
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02321290434481453
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017745540628616124
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010709599440971487
+        }
+      ],
+      "replicate": 15,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026756871376749803
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07342249690635923
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02319316446572072
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017866602093501095
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010724663358507304
+        }
+      ],
+      "replicate": 16,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02684852562078734
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.073455141664307
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023239524924314282
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017825973414722087
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010633543975409582
+        }
+      ],
+      "replicate": 17,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026860559350254377
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07350834370712504
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02323803719648153
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001837105748662167
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010744785164372984
+        }
+      ],
+      "replicate": 18,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026795555574272354
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07349954550166363
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023224553609791438
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017734610223077117
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010639346528905922
+        }
+      ],
+      "replicate": 19,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026835247518722738
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07341977638346218
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023186743536221018
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017443035670354375
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010643588332266769
+        }
+      ],
+      "replicate": 20,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026801282650077977
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07347029968673269
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023163768800981734
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018095628419695195
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010620982071871482
+        }
+      ],
+      "replicate": 21,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02677141628310807
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0735036284762555
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02318154512095908
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018395582980489725
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010770538648373792
+        }
+      ],
+      "replicate": 22,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02681245501393125
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07345682399147821
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023167527039140903
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017529818867448007
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010742021254531052
+        }
+      ],
+      "replicate": 23,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026804791845926153
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734165236393324
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023220398316236
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017431725318409633
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01068542774713895
+        }
+      ],
+      "replicate": 24,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02684446621532563
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07343253188790572
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023146206631304355
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018213970924202399
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010689049785929439
+        }
+      ],
+      "replicate": 25,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026803759965374447
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734785962042265
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023266597521610522
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018070291861459358
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01068877754321814
+        }
+      ],
+      "replicate": 26,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02678232720374002
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07348569096138834
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023223500899841307
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017299731497614351
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010637979987811881
+        }
+      ],
+      "replicate": 27,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026854276802792218
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07353159534980143
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023234184631401013
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018164694013544
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010774550602945947
+        }
+      ],
+      "replicate": 28,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02669949792917758
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07338957803775258
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023243191619680866
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017103912788437679
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010712172763876194
+        }
+      ],
+      "replicate": 29,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026791283179991434
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07344744160935919
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023180099376116953
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001839859216971917
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010698608080578787
+        }
+      ],
+      "replicate": 30,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.004455080756887719,
+      "estimate": 0.16875,
+      "final_bracket_width": 0.012499999999999983,
+      "iterations": 5,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026797691828788123
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734656948360466
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023205605634590336
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001761462632485611
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010761589868079156
+        }
+      ],
+      "replicate": 31,
+      "success": true,
+      "target_precision": 0.00625
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026892454641046545
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07345356038150641
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023191873114805434
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018660834408614233
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01069505397806308
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004300766137248774
+        }
+      ],
+      "replicate": 0,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026832826763752326
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346857407317858
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02308833981519447
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017329024546556197
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010700386824982746
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004464756834995359
+        }
+      ],
+      "replicate": 1,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026874148551817637
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346884159738214
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02308737313204418
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001767489182393091
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010729742540109688
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.0043985906455086664
+        }
+      ],
+      "replicate": 2,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026735977781535063
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07352637159604399
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02315140265680678
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018409673170849867
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010674118541522159
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004475130651781463
+        }
+      ],
+      "replicate": 3,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02685456519372934
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07354624995015134
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023235431111580614
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001751818390314372
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010717847113818407
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004464603409435926
+        }
+      ],
+      "replicate": 4,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02680647935533958
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.073461284082939
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023179406382771474
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018575878867924816
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010719106666306539
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.0045107353587050215
+        }
+      ],
+      "replicate": 5,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026843202919850144
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734164672310463
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02325037278027054
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018377078402404248
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.0107537208800092
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.00446566146433264
+        }
+      ],
+      "replicate": 6,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026900768269343123
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07350689159030611
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02313849268141721
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017333170140893639
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01069168572941535
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004500322303348196
+        }
+      ],
+      "replicate": 7,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026853600226558184
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07351324071558339
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023172236747909605
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018126967021051888
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010730828815978753
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004418630980150543
+        }
+      ],
+      "replicate": 8,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02677565775615584
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.073476889055111
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02319401714165542
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017928726002230837
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01072073247736658
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004446069379663397
+        }
+      ],
+      "replicate": 9,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026814207271323
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346765417703142
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02322031139124714
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017480520477351287
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010771306752296652
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004424952792421184
+        }
+      ],
+      "replicate": 10,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026775321486250135
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07352704423189313
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023152020045810164
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018669217854152206
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010742662815263862
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004494699421291676
+        }
+      ],
+      "replicate": 11,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02679388632948088
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07344750957808134
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023185921377503547
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017497257162857843
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010711426092389087
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004455631832448254
+        }
+      ],
+      "replicate": 12,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026820152815229086
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07340099009406693
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023222646053710643
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017426331886291192
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01070385429365508
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004358052214817808
+        }
+      ],
+      "replicate": 13,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026844012499548698
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346061258331332
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02321903553854685
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017088605011932136
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010697102331218374
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004452184325043839
+        }
+      ],
+      "replicate": 14,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026839497099064018
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346099879283619
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02308947981857851
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018390897858259155
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010627569129296823
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004386816512320809
+        }
+      ],
+      "replicate": 15,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026849627862037876
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0735325063374211
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023293962272939152
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017682387152285813
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010710498754482472
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.0044475787365332925
+        }
+      ],
+      "replicate": 16,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026830034089982985
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07351200449384938
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023287334029305422
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017424543796093345
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010743152268224303
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004473016160190124
+        }
+      ],
+      "replicate": 17,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026711925074423246
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734040530988785
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02321669561066911
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017573692314441977
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010807089967802113
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004511855046291809
+        }
+      ],
+      "replicate": 18,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026799099079544475
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07349643540938855
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023222133627283877
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018279804136657365
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010787203054806667
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004439438490522169
+        }
+      ],
+      "replicate": 19,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.0268259346778656
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07332915867736532
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023243102691451117
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017618727083363469
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010678587100957338
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004421963323364461
+        }
+      ],
+      "replicate": 20,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026828246642333593
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07348811896227618
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02316461926710442
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017809923479640832
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01074123290805522
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004491780254651249
+        }
+      ],
+      "replicate": 21,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026834361210753832
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07345894242843161
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023266166036727397
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018434736013835254
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010678063049114509
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004433378009468175
+        }
+      ],
+      "replicate": 22,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026754587250454046
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07352977212690542
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023164041299995303
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017735431556633685
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010712060309576653
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004399870319200686
+        }
+      ],
+      "replicate": 23,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026775192278410357
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346338701025912
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.0231690075683302
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017277494584414476
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010684838111600333
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004482227479718905
+        }
+      ],
+      "replicate": 24,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.0268209365771065
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07343472425207331
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023213006568223647
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001923223622655432
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010801970972523984
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004276221550563925
+        }
+      ],
+      "replicate": 25,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.02688236868898287
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07353624642752749
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023317446462607264
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017507402198252127
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010763438460986817
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004401126750155632
+        }
+      ],
+      "replicate": 26,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026872385069691467
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734795982571067
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023191823222756813
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0018034757319692102
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010679177852243607
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004454520424975411
+        }
+      ],
+      "replicate": 27,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026733582833865063
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.0734808942697188
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023148451905895973
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017778971666811167
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010694301996547409
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004460845922461193
+        }
+      ],
+      "replicate": 28,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026835373931187564
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07346791743654021
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.02315453964859262
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017209426875275193
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01070873402831014
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.004461743583560727
+        }
+      ],
+      "replicate": 29,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026867057117847388
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07337381030750063
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023181760659415053
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.001757607094303947
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.010636845620878731
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.0044434017715273815
+        }
+      ],
+      "replicate": 30,
+      "success": true,
+      "target_precision": 0.003125
+    },
+    {
+      "absolute_error": 0.0013300807568877304,
+      "estimate": 0.171875,
+      "final_bracket_width": 0.0062500000000000056,
+      "iterations": 6,
+      "records": [
+        {
+          "bracket_lower": 0.0,
+          "bracket_upper": 0.2,
+          "midpoint": 0.2,
+          "signal_estimate": -0.026822816572733544
+        },
+        {
+          "bracket_lower": 0.1,
+          "bracket_upper": 0.2,
+          "midpoint": 0.1,
+          "signal_estimate": 0.07338213752711124
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.2,
+          "midpoint": 0.15000000000000002,
+          "signal_estimate": 0.023219993952570617
+        },
+        {
+          "bracket_lower": 0.15000000000000002,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.17500000000000002,
+          "signal_estimate": -0.0017817112117203464
+        },
+        {
+          "bracket_lower": 0.16250000000000003,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16250000000000003,
+          "signal_estimate": 0.01065550244510497
+        },
+        {
+          "bracket_lower": 0.16875,
+          "bracket_upper": 0.17500000000000002,
+          "midpoint": 0.16875,
+          "signal_estimate": 0.00443902190595645
+        }
+      ],
+      "replicate": 31,
+      "success": true,
+      "target_precision": 0.003125
+    }
+  ],
+  "validation_summary": [
+    {
+      "iteration_counts_identical": true,
+      "observed_iteration_count": 2,
+      "passes_validation": true,
+      "required_iterations": 2,
+      "success_rate": 1.0,
+      "successes": 32,
+      "target_precision": 0.05,
+      "trials": 32,
+      "wilson_95_lower": 0.8928172849426365
+    },
+    {
+      "iteration_counts_identical": true,
+      "observed_iteration_count": 3,
+      "passes_validation": true,
+      "required_iterations": 3,
+      "success_rate": 1.0,
+      "successes": 32,
+      "target_precision": 0.025,
+      "trials": 32,
+      "wilson_95_lower": 0.8928172849426365
+    },
+    {
+      "iteration_counts_identical": true,
+      "observed_iteration_count": 4,
+      "passes_validation": true,
+      "required_iterations": 4,
+      "success_rate": 1.0,
+      "successes": 32,
+      "target_precision": 0.0125,
+      "trials": 32,
+      "wilson_95_lower": 0.8928172849426365
+    },
+    {
+      "iteration_counts_identical": true,
+      "observed_iteration_count": 5,
+      "passes_validation": true,
+      "required_iterations": 5,
+      "success_rate": 1.0,
+      "successes": 32,
+      "target_precision": 0.00625,
+      "trials": 32,
+      "wilson_95_lower": 0.8928172849426365
+    },
+    {
+      "iteration_counts_identical": true,
+      "observed_iteration_count": 6,
+      "passes_validation": true,
+      "required_iterations": 6,
+      "success_rate": 1.0,
+      "successes": 32,
+      "target_precision": 0.003125,
+      "trials": 32,
+      "wilson_95_lower": 0.8928172849426365
+    }
+  ],
+  "verdict": "VERIFIED"
+}

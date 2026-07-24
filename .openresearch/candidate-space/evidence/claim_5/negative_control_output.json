@@ -1,0 +1,18 @@
+{
+  "barren_plateau_endpoint_signs": [
+    0.0,
+    0.0
+  ],
+  "historical_x_squared_endpoint_signs": [
+    0.0,
+    0.16000000000000003
+  ],
+  "lowest_rpe_level": {
+    "max_level": 8,
+    "passes_calibration": false,
+    "success_rate": 0.8125,
+    "successes": 52,
+    "trials": 64,
+    "wilson_95_lower": 0.7002540844522482
+  }
+}

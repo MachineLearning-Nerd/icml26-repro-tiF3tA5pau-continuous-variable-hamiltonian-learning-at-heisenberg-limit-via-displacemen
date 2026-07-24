@@ -1,0 +1,1 @@
+{"checker": "claim5_verify.py", "failures": ["bogoliubov_signal_identity_is_exact"], "passed": false}

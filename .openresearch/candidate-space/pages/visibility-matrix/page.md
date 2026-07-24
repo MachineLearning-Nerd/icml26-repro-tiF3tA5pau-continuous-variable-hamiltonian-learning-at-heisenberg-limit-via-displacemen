@@ -10,7 +10,7 @@ the item directly; it does not forecast judge points.
 | 2 | Missing | Missing | Missing | Missing | Missing | Missing | Missing | BLOCKED |
 | 3 | [Current displacement-SPAM bound](#/claim-3-current) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Scientific review complete; evaluator-blind red team pending |
 | 4 | [Current covariance certificate](#/claim-4-current) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Scientific review complete; evaluator-blind red team pending |
-| 5 | Missing | Missing | Missing | Missing | Missing | Missing | Missing | BLOCKED |
+| 5 | [Current Bogoliubov squeezing search](#/claim-5-current) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Scientific review complete; evaluator-blind red team pending |
 | 6 | [Current D-RUT pipeline](#/claim-6-current) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | Scientific review complete; evaluator-blind red team pending |
 
 Publication remains blocked while any row contains a missing cell or lacks the

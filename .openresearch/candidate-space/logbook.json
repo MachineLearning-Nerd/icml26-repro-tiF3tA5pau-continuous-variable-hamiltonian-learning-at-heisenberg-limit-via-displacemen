@@ -27,6 +27,12 @@
         "children": []
       },
       {
+        "slug": "claim-5-current",
+        "title": "Claim 5: Bogoliubov squeezing search — VERIFIED",
+        "file": "pages/claim-5-current/page.md",
+        "children": []
+      },
+      {
         "slug": "claim-6-current",
         "title": "Claim 6: current D-RUT pipeline — VERIFIED",
         "file": "pages/claim-6-current/page.md",
