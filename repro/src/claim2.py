@@ -23,8 +23,8 @@ TRUE_PRODUCT = math.exp(-2 * R_TRUE)
 TRUTH_G = np.array(
     [OMEGA * TRUE_PRODUCT / 2, OMEGA / (2 * TRUE_PRODUCT)]
 )
-TARGETS = [0.02, 0.01, 0.005, 0.0025, 0.00125]
-LEVELS = list(range(5, 13))
+TARGETS = [0.005, 0.0025, 0.00125, 0.000625, 0.0003125]
+LEVELS = list(range(5, 15))
 SHOTS = 256
 RADIUS = 0.55
 CALIBRATION_REPS = 16
@@ -151,8 +151,8 @@ def main() -> bool:
         eligible = [
             record["level"]
             for record in records
-            if record["success_rate"] >= 0.875
-            and record["median_rmse"] <= target
+            if record["success_rate"] == 1.0
+            and record["median_rmse"] <= target / 3
         ]
         if eligible:
             selected[str(target)] = min(eligible)
