@@ -1,0 +1,45 @@
+{
+  "claim_id": 3,
+  "judge_claim": "The protocol's estimation error under state-preparation-and-measurement (SPAM) errors is bounded as ||delta g_SPAM||_2 <= (L_C/sigma_min(K)) ||delta beta||_2, where L_C is a Lipschitz constant and sigma_min(K) the smallest singular value of the Gram-like matrix K (Section 3.6, Eq. 43).",
+  "paper_version_tested": "arXiv:2510.08419v1",
+  "source_pdf_sha256": "88c58a90096ad67bea10336322a33d15a76367d59a7195ef30266c702652b2c7",
+  "source_anchors": [
+    "Section 3.6",
+    "Equations (36)-(46)"
+  ],
+  "domain": {
+    "system": "single bosonic mode",
+    "hamiltonian": "Hermitian normal-ordered degree-2 polynomial",
+    "coefficient_parameterization": "[Re(g10), Im(g10), Re(g20), Im(g20), g11]",
+    "measurement_design": "combined Algorithm 1 Chebyshev-radius and angular response matrix K",
+    "displacement_domain": "|beta| <= 0.70",
+    "spam_model": "independent complex displacement miscalibration at each measurement point; RPE statistical noise excluded from delta g_SPAM"
+  },
+  "exact_statement_tested": "For every displacement perturbation whose line segment remains in the certified disk, ||K^+[C(beta+delta)-C(beta)]||_2 <= (L_C/sigma_min(K))||delta||_2.",
+  "proof_obligation": "Derive the exact D-RUT polynomial C, its Cartesian gradient grad C=h+Hz, certify L_C=||h||_2+||H||_2*0.70, use the actual full-rank Algorithm 1 design K, and apply the mean-value and pseudoinverse operator-norm inequalities.",
+  "predeclared_acceptance": {
+    "exact_symbolic_gradient": true,
+    "design_full_rank": true,
+    "pseudoinverse_norm_identity_absolute_max": 1e-10,
+    "design_response_residual_max": 1e-14,
+    "finite_fock_response_absolute_max": 2e-12,
+    "twirl_off_diagonal_frobenius_max": 2e-10,
+    "perturbation_magnitudes": [
+      0.0001,
+      0.0003,
+      0.001,
+      0.003,
+      0.01
+    ],
+    "directions_per_magnitude": 12,
+    "equation_43_bound_ratio_max": 1.0000000001,
+    "median_error_log_log_slope_interval": [
+      0.94,
+      1.06
+    ],
+    "underestimated_lipschitz_control_bound_ratio_min": 10.0
+  },
+  "seed": 303251008419,
+  "verdict_rule": "VERIFIED only if the universal algebraic certificate, faithful finite-Fock response checks, all predeclared perturbation tests, independent checker, and negative control pass; otherwise BLOCKED.",
+  "scope_limit": "This verifies displacement-miscalibration SPAM as defined in Section 3.6. It does not cover arbitrary state-preparation or readout channels, and it keeps the paper's separately analyzed RPE noise outside delta g_SPAM."
+}
