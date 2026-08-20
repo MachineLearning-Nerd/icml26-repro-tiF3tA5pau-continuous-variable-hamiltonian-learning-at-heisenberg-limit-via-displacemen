@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: "Legacy/source workspace for Continuous-Variable Hamiltonian Learning at Heisenberg Limit via Displacement Randomized Unitary Transformations"
+type: software
+authors:
+  - family-names: Huang
+    given-names: Xi
+  - family-names: Zhang
+    given-names: Lixing
+  - family-names: Luo
+    given-names: Di
+repository-code: "https://github.com/MachineLearning-Nerd/icml26-legacy-d-rut-hamiltonian-learning"
+url: "https://github.com/MachineLearning-Nerd/icml26-legacy-d-rut-hamiltonian-learning"
+abstract: "Legacy/source workspace preserving the implementation, evidence artifacts, and branch history for the associated ICML 2026 reproduction record."
+keywords:
+  - reproduction
+  - ICML 2026
+references:
+  - type: article
+    title: "Continuous-Variable Hamiltonian Learning at Heisenberg Limit via Displacement Randomized Unitary Transformations"
+    authors:
+      - family-names: Huang
+        given-names: Xi
+      - family-names: Zhang
+        given-names: Lixing
+      - family-names: Luo
+        given-names: Di
+    identifiers:
+      - type: arxiv
+        value: "2510.08419"
+    url: "https://arxiv.org/abs/2510.08419"
+
