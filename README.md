@@ -25,6 +25,10 @@ publication claims. Their purposes and tips are preserved in
 details are in [`CITATION.cff`](CITATION.cff) and
 [`AUTHOR_THANK_YOU.md`](AUTHOR_THANK_YOU.md).
 
+## Thank you
+
+Thank you to the paper authors for making this research available for study. The full acknowledgment is in [`AUTHOR_THANK_YOU.md`](AUTHOR_THANK_YOU.md).
+
 The previous judged artifact scored **5/12** because it replaced the quantum
 protocol with injected-noise linear algebra. This campaign tests all six
 claims of arXiv:2510.08419v1 with physical bosonic displacement, independent
